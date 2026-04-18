@@ -1,0 +1,15 @@
+{
+  "name": "sigilweaver-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["homepage", "loom", "openyxdb"],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:homepage": "bun run --cwd homepage build",
+    "build:loom": "bun run --cwd loom build",
+    "build:openyxdb": "bun run --cwd openyxdb build",
+    "build": "bun run clean && bun run build:homepage && bun run build:loom && bun run build:openyxdb",
+    "deploy": "bun run build && bunx wrangler deploy"
+  }
+}
