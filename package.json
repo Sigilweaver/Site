@@ -1,15 +1,28 @@
 {
-  "name": "sigilweaver-site",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "workspaces": ["homepage", "loom", "openyxdb"],
-  "scripts": {
-    "clean": "rm -rf dist",
-    "build:homepage": "bun run --cwd homepage build",
-    "build:loom": "bun run --cwd loom build",
-    "build:openyxdb": "bun run --cwd openyxdb build",
-    "build": "bun run clean && bun run build:homepage && bun run build:loom && bun run build:openyxdb",
-    "deploy": "bun run build && bunx wrangler deploy"
-  }
+    "name": "sigilweaver-site",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "sitemap": "node scripts/generate-sitemaps.mjs",
+        "build": "bun run sitemap && tsc && vite build",
+        "preview": "vite preview",
+        "test": "vitest run",
+        "deploy": "bun run build && bunx wrangler deploy"
+    },
+    "dependencies": {
+        "lucide": "^0.556.0",
+        "prismjs": "^1.30.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.7.4",
+        "@types/prismjs": "^1.26.5",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.47",
+        "tailwindcss": "^3.4.14",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.11",
+        "vitest": "^4.0.18"
+    }
 }

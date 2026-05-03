@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: dark;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, theme('colors.mystic.900'), theme('colors.mystic.700'));
+    color: white;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+
+.nav-bar {
+    background-color: rgba(26, 11, 46, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid theme('colors.mystic.700');
+}
+
+.mobile-menu {
+    background-color: rgba(30, 17, 51, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid theme('colors.mystic.700');
+}
+
+.nav-link {
+    color: theme('colors.mystic.300');
+    transition: color 0.2s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.nav-link:hover {
+    color: theme('colors.gold.400');
+}
+
+.nav-link:focus {
+    outline: 2px solid theme('colors.gold.400');
+    outline-offset: 2px;
+}
+
+.cta-button {
+    background: linear-gradient(to right, theme('colors.mystic.600'), theme('colors.mystic.500'));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(to right, theme('colors.mystic.500'), theme('colors.mystic.400'));
+}
+
+.cta-button:focus {
+    outline: 2px solid theme('colors.gold.400');
+    outline-offset: 2px;
+}
+
+/* ===================================
+   Custom Scrollbar
+   =================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: theme('colors.mystic.900');
+}
+
+::-webkit-scrollbar-thumb {
+    background: theme('colors.mystic.700');
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.mystic.600');
+}

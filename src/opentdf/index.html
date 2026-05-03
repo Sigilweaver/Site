@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenTDF — Sigilweaver</title>
+  <meta name="description"
+    content="Clean-room Rust parser for Bruker timsTOF TDF bundles, reverse-engineered without the vendor SDK." />
+  <link rel="canonical" href="https://sigilweaver.app/opentdf/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="OpenTDF" />
+  <meta property="og:description" content="Pure-Rust parser for Bruker timsTOF TDF bundles. No vendor SDK required." />
+  <meta property="og:url" content="https://sigilweaver.app/opentdf/" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
+    <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">OpenTDF</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
+      Read Bruker <span class="text-gold-400">timsTOF</span> data in
+      <span class="text-gold-400">Rust</span>.
+    </h1>
+    <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
+      A pure-Rust parser for Bruker's TDF format — an SQLite metadata database
+      paired with a binary blob
+      (<code class="font-mono text-mystic-200">analysis.tdf_bin</code>), used
+      by timsTOF Pro, Pro 2, HT, SCP, Ultra, and fleX instruments.
+      Reverse-engineered without the vendor SDK. Covers TDF schema versions
+      3.1 through 3.8.
+    </p>
+
+    <section class="grid gap-4 sm:grid-cols-2 mb-10">
+      <a href="/opentdf/docs"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Docs</h2>
+        <p class="text-sm text-mystic-400">Format spec, API reference, and quickstart.</p>
+      </a>
+      <a href="https://github.com/Sigilweaver/OpenTDF" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
+        <p class="text-sm text-mystic-400">MIT on GitHub.</p>
+      </a>
+    </section>
+
+    <div class="prose prose-invert max-w-none text-mystic-400">
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">What is TDF?</h2>
+      <p>
+        TDF is the acquisition format for Bruker's timsTOF instrument family.
+        Each acquisition bundle (<code class="font-mono text-mystic-200">.d/</code>) contains
+        an <code class="font-mono text-mystic-200">analysis.tdf</code> SQLite database with frame
+        metadata, calibration parameters, and schema, alongside an
+        <code class="font-mono text-mystic-200">analysis.tdf_bin</code> binary file that holds
+        compressed peak frames. The vendor exposes access only through a closed shared library.
+        OpenTDF reconstructs the full on-disk layout from first principles.
+      </p>
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">Coverage</h2>
+      <p>
+        Both compression codecs are supported: legacy LZF (codec 1) and
+        zstd-with-transpose (codec 2). TOF-to-m/z and scan-to-1/K&#x2080; calibration
+        uses the open opentims linear models. Validated against a 15-bundle corpus
+        spanning every timsTOF variant.
+      </p>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/opentdf/main.ts"></script>
+</body>
+
+</html>

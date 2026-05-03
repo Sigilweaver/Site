@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sigilweaver</title>
+  <meta name="description" content="Sigilweaver is an independent workshop for open-source data tooling." />
+  <link rel="canonical" href="https://sigilweaver.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sigilweaver" />
+  <meta property="og:description" content="Sigilweaver is an independent workshop for open-source data tooling." />
+  <meta property="og:url" content="https://sigilweaver.app/" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-20 pt-28 max-w-3xl">
+    <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-6 leading-tight">
+      An independent workshop for
+      <span class="text-gold-400">open-source data tooling</span>.
+    </h1>
+    <p class="text-lg text-mystic-400 mb-12 max-w-2xl">
+      No SaaS. No seats. Just software you can read, run, and own — from
+      visual data pipelines to file-format libraries.
+    </p>
+
+    <section class="mb-12">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-gold-400/80 mb-4">Flagship</h2>
+      <div class="grid gap-4">
+        <a href="/loom/"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">Loom</h3>
+          <p class="text-sm text-mystic-400">
+            Visual data pipeline tool built on Polars. Self-hosted, no SaaS
+            required. Approaching its first public release.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-gold-400/80 mb-4">File formats</h2>
+      <p class="text-sm text-mystic-400 mb-4 max-w-2xl">
+        Reverse-engineering and documenting proprietary binary formats — open
+        specs and clean-room readers for closed file types.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a href="/openyxdb/"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">OpenYXDB</h3>
+          <p class="text-sm text-mystic-400">
+            Maintained fork of Alteryx's YXDB library. Cross-platform C++ core
+            with Python bindings via nanobind.
+          </p>
+        </a>
+
+        <a href="https://github.com/Sigilweaver/OpenQVD" rel="noopener"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">OpenQVD</h3>
+          <p class="text-sm text-mystic-400">
+            Clean-room Rust reader/writer for Qlik QVD files. Full spec, Python
+            bindings (PyArrow, Polars, Pandas), CLI.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-gold-400/80 mb-4">Bioinformatics</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a href="https://github.com/Sigilweaver/BioLance" rel="noopener"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">BioLance</h3>
+          <p class="text-sm text-mystic-400">
+            Fast, columnar multi-sample variant store on LanceDB. Ingests
+            VCF/BCF and ClinVar — query by region or gene, no Spark, no cloud.
+          </p>
+        </a>
+
+        <a href="https://github.com/Sigilweaver/OpenKSpace" rel="noopener"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">OpenKSpace</h3>
+          <p class="text-sm text-mystic-400">
+            Rust library and CLI for Cartesian MRI k-space reconstruction from
+            ISMRMRD <code class="text-mystic-300">.h5</code> files.
+          </p>
+        </a>
+
+        <a href="https://github.com/Sigilweaver/DICOM-Atlas" rel="noopener"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors sm:col-span-2">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">DICOM Atlas</h3>
+          <p class="text-sm text-mystic-400">
+            Open registry of public and private DICOM tags compiled from vendor
+            conformance statements plus PS3.6, pydicom, and GDCM.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-gold-400/80 mb-4">Proteomics</h2>
+      <p class="text-sm text-mystic-400 mb-4 max-w-2xl">
+        Clean-room specs and readers for closed mass-spectrometry formats,
+        reverse-engineered without vendor SDKs.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a href="/opentfraw/"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">OpenTFRaw</h3>
+          <p class="text-sm text-mystic-400">
+            Pure-Rust parser for Thermo Fisher RAW files. Covers format
+            versions 8-66, from the LCQ Classic through the Orbitrap Astral.
+          </p>
+        </a>
+
+        <a href="/opentdf/"
+          class="block p-6 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+          <h3 class="text-xl font-semibold text-mystic-200 mb-1">OpenTDF</h3>
+          <p class="text-sm text-mystic-400">
+            Pure-Rust parser for Bruker timsTOF TDF bundles. SQLite metadata +
+            binary frames, both LZF and zstd codecs, full calibration.
+          </p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/main.ts"></script>
+</body>
+
+</html>

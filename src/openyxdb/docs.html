@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs — OpenYXDB</title>
+  <meta name="description" content="OpenYXDB documentation." />
+  <link rel="canonical" href="https://sigilweaver.app/openyxdb/docs" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-12 pt-28 max-w-3xl">
+    <h1 class="text-3xl sm:text-4xl font-bold text-mystic-200 mb-2">Documentation</h1>
+    <p class="text-mystic-400 mb-10">
+      This is a stub site — the canonical reference lives in the
+      <a href="https://github.com/Sigilweaver/OpenYXDB/blob/main/README.md" class="text-gold-400 hover:underline"
+        target="_blank" rel="noopener noreferrer">repo README</a>
+      and the Python package docstrings. We will expand this as the package
+      stabilizes.
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-mystic-200 mb-3">Install</h2>
+      <pre
+        class="rounded-lg border border-mystic-700 bg-mystic-800/50 p-4 font-mono text-sm text-mystic-200 overflow-x-auto"><code>pip install openyxdb</code></pre>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-mystic-200 mb-3">Quickstart</h2>
+      <pre
+        class="rounded-lg border border-mystic-700 bg-mystic-800/50 p-4 font-mono text-sm text-mystic-200 overflow-x-auto"><code>import openyxdb
+
+# One-shot reads
+table = openyxdb.to_pyarrow("data.yxdb")
+df    = openyxdb.to_polars("data.yxdb")
+
+# Streaming + pushdown via Polars LazyFrame
+lf = openyxdb.scan_yxdb("data.yxdb")
+head = lf.select(["col_a", "col_b"]).head(1000).collect()
+
+# Write
+openyxdb.from_polars(df, "out.yxdb")</code></pre>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-mystic-200 mb-3">scan_yxdb pushdown</h2>
+      <p class="text-mystic-400 mb-3">
+        <code class="font-mono text-mystic-200">scan_yxdb</code> pushes
+        column projection and row limits down to the C++ reader and streams
+        results in chunks (default 65,536 rows). Predicate pushdown is not
+        supported at the file level — YXDB has no per-block statistics — so
+        predicates run on the in-memory chunk after decode.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-mystic-200 mb-3">Format</h2>
+      <p class="text-mystic-400">
+        YXDB is row-oriented: UTF-16 XML metadata, LZF-compressed record
+        blocks, and a trailing block index. OpenYXDB supports the E1 (non-AMP)
+        variant.
+      </p>
+    </section>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/openyxdb/main.ts"></script>
+</body>
+
+</html>
