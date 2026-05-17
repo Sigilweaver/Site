@@ -97,21 +97,39 @@ export const opentfrawNavConfig: NavConfig = {
     },
     links: [
         { label: 'Docs', href: '/opentfraw/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/opentfraw/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenTFRaw', isExternal: true },
     ],
 };
 
 /**
- * OpenTDF section navigation
+ * OpenTimsTDF section navigation
  */
-export const opentdfNavConfig: NavConfig = {
+export const opentimstdfNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/opentdf/',
+        href: '/opentimstdf/',
     },
     links: [
-        { label: 'Docs', href: '/opentdf/docs' },
-        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenTDF', isExternal: true },
+        { label: 'Docs', href: '/opentimstdf/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/opentimstdf/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenTimsTDF', isExternal: true },
+    ],
+};
+
+/**
+ * OpenWRaw section navigation
+ */
+export const openwrawNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/openwraw/',
+    },
+    links: [
+        { label: 'Docs', href: '/openwraw/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/openwraw/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenWRaw', isExternal: true },
     ],
 };

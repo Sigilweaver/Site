@@ -16,6 +16,9 @@
     <loc>https://sigilweaver.app/opentfraw/sitemap.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://sigilweaver.app/opentdf/sitemap.xml</loc>
+    <loc>https://sigilweaver.app/opentimstdf/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openwraw/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>

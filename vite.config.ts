@@ -32,10 +32,10 @@ export default defineConfig({
         'openyxdb/docs': resolve(__dirname, 'src/openyxdb/docs.html'),
         // OpenTFRaw
         'opentfraw/index': resolve(__dirname, 'src/opentfraw/index.html'),
-        'opentfraw/docs': resolve(__dirname, 'src/opentfraw/docs.html'),
-        // OpenTDF
-        'opentdf/index': resolve(__dirname, 'src/opentdf/index.html'),
-        'opentdf/docs': resolve(__dirname, 'src/opentdf/docs.html'),
+        // OpenTimsTDF
+        'opentimstdf/index': resolve(__dirname, 'src/opentimstdf/index.html'),
+        // OpenWRaw
+        'openwraw/index': resolve(__dirname, 'src/openwraw/index.html'),
       },
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',

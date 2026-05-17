@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenTFRaw — Sigilweaver</title>
+  <title>OpenTFRaw - Sigilweaver</title>
   <meta name="description"
     content="Clean-room Rust parser for Thermo Fisher RAW mass-spectrometry files, reverse-engineered without the vendor SDK." />
   <link rel="canonical" href="https://sigilweaver.app/opentfraw/" />
@@ -29,7 +29,7 @@
       A pure-Rust parser for Thermo Fisher's proprietary
       <code class="font-mono text-mystic-200">.raw</code> mass-spectrometry
       format, reverse-engineered without the vendor SDK. Covers format
-      versions 8 through 66 — from the LCQ Classic (mid-1990s) through the
+      versions 8 through 66 - from the LCQ Classic (mid-1990s) through the
       Orbitrap Astral (2023).
     </p>
 
@@ -50,7 +50,7 @@
       <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">What is the RAW format?</h2>
       <p>
         Thermo Fisher's <code class="font-mono text-mystic-200">.raw</code> format is the native
-        acquisition format for Xcalibur-based instruments — Orbitrap, LTQ, TSQ, and related
+        acquisition format for Xcalibur-based instruments - Orbitrap, LTQ, TSQ, and related
         lines. The format is closed and undocumented by the vendor; the only supported access
         path is their proprietary SDK (Windows-only DLL). OpenTFRaw reconstructs the on-disk
         layout from first principles: file header, audit log, sample info, run header,

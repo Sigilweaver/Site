@@ -1,9 +1,9 @@
 import '../styles/global.css';
 import './styles/main.css';
-import { initializeLayout, opentdfNavConfig } from '../components';
+import { initializeLayout, opentimstdfNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: opentdfNavConfig, title: 'OpenTDF' },
+        header: { config: opentimstdfNavConfig, title: 'OpenTimsTDF' },
     });
 });
