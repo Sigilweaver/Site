@@ -1,4 +1,4 @@
 export { createHeader, type HeaderOptions } from './Header';
 export { createFooter, defaultFooterConfig, type FooterConfig, type FooterColumn, type FooterLink } from './Footer';
 export { initializeLayout, type LayoutOptions } from './layout';
-export { siteNavConfig, loomNavConfig, loomSimpleNavConfig, openyxdbNavConfig, opentfrawNavConfig, opentimstdfNavConfig, openwrawNavConfig, openproteoNavConfig, type NavConfig, type NavLink } from './config';
+export { siteNavConfig, loomNavConfig, loomSimpleNavConfig, openyxdbNavConfig, opentfrawNavConfig, opentimstdfNavConfig, openwrawNavConfig, openproteoNavConfig, opensqlanywhereNavConfig, openqbwNavConfig, type NavConfig, type NavLink } from './config';

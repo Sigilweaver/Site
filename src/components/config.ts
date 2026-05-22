@@ -150,3 +150,36 @@ export const openproteoNavConfig: NavConfig = {
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenProteo', isExternal: true },
     ],
 };
+
+/**
+ * OpenSQLAnywhere section navigation
+ */
+export const opensqlanywhereNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/opensqlanywhere/',
+    },
+    links: [
+        { label: 'Docs', href: '/opensqlanywhere/docs' },
+        { label: 'crates.io', href: 'https://crates.io/crates/opensqlany', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenSQLAnywhere', isExternal: true },
+    ],
+};
+
+/**
+ * OpenQBW section navigation
+ */
+export const openqbwNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/openqbw/',
+    },
+    links: [
+        { label: 'Docs', href: '/openqbw/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/openqbw/', isExternal: true },
+        { label: 'crates.io', href: 'https://crates.io/crates/openqbw', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenQBW', isExternal: true },
+    ],
+};
