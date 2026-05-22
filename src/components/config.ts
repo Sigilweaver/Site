@@ -133,3 +133,19 @@ export const openwrawNavConfig: NavConfig = {
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenWRaw', isExternal: true },
     ],
 };
+
+/**
+ * OpenProteo section navigation
+ */
+export const openproteoNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/openproteo/',
+    },
+    links: [
+        { label: 'Docs', href: '/openproteo/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/openproteo/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenProteo', isExternal: true },
+    ],
+};
