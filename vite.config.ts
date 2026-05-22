@@ -38,6 +38,8 @@ export default defineConfig({
         'openwraw/index': resolve(__dirname, 'src/openwraw/index.html'),
         // OpenProteo
         'openproteo/index': resolve(__dirname, 'src/openproteo/index.html'),
+        // Docs hub
+        'docs/index': resolve(__dirname, 'src/docs/index.html'),
       },
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',

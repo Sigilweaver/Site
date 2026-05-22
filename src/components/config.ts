@@ -31,6 +31,7 @@ export const siteNavConfig: NavConfig = {
         href: '/',
     },
     links: [
+        { label: 'Docs', href: '/docs/' },
         { label: 'Loom', href: '/loom/' },
         { label: 'OpenYXDB', href: '/openyxdb/' },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver', isExternal: true },
