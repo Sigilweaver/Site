@@ -214,3 +214,19 @@ export const dicomAtlasNavConfig: NavConfig = {
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/DICOM-Atlas', isExternal: true },
     ],
 };
+
+/**
+ * SigilYX section navigation
+ */
+export const sigilyxNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/sigilyx/',
+    },
+    links: [
+        { label: 'PyPI', href: 'https://pypi.org/project/sigilyx/', isExternal: true },
+        { label: 'crates.io', href: 'https://crates.io/crates/sigilyx', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/SigilYX', isExternal: true },
+    ],
+};

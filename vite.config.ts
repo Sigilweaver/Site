@@ -46,6 +46,8 @@ export default defineConfig({
         'openkspace/index': resolve(__dirname, 'src/openkspace/index.html'),
         // DICOM Atlas
         'dicom-atlas/index': resolve(__dirname, 'src/dicom-atlas/index.html'),
+        // SigilYX
+        'sigilyx/index': resolve(__dirname, 'src/sigilyx/index.html'),
         // Docs hub
         'docs/index': resolve(__dirname, 'src/docs/index.html'),
       },
