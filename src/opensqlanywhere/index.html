@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenSQLAnywhere - Sigilweaver</title>
+  <meta name="description"
+    content="Pure-Rust reader and open specification for SAP SQL Anywhere page-store databases." />
+  <link rel="canonical" href="https://sigilweaver.app/opensqlanywhere/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="OpenSQLAnywhere" />
+  <meta property="og:description" content="Pure-Rust reader for SAP SQL Anywhere databases." />
+  <meta property="og:url" content="https://sigilweaver.app/opensqlanywhere/" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
+    <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">OpenSQLAnywhere</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
+      An open reader for <span class="text-gold-400">SAP SQL Anywhere</span> page stores.
+    </h1>
+    <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
+      Pure-Rust parser plus a published specification for the SAP SQL Anywhere
+      on-disk format - the page store underneath QuickBooks Desktop, Sybase
+      iAnywhere, and a long tail of vertical apps. Read without the vendor
+      runtime.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mb-10 font-mono text-sm">
+      <div class="inline-block rounded-lg border border-mystic-700 bg-mystic-800/50 px-4 py-3 text-mystic-200">
+        cargo add opensqlany
+      </div>
+      <div class="inline-block rounded-lg border border-mystic-700 bg-mystic-800/50 px-4 py-3 text-mystic-200">
+        cargo install opensqlany-cli
+      </div>
+    </div>
+
+    <section class="grid gap-4 sm:grid-cols-2 mb-10">
+      <a href="/opensqlanywhere/docs/"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Docs &amp; spec</h2>
+        <p class="text-sm text-mystic-400">Format reference, usage, and CLI guide.</p>
+      </a>
+      <a href="https://github.com/Sigilweaver/OpenSQLAnywhere" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
+        <p class="text-sm text-mystic-400">Apache-2.0 on GitHub.</p>
+      </a>
+    </section>
+
+    <div class="prose prose-invert max-w-none text-mystic-400">
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">What is SQL Anywhere?</h2>
+      <p>
+        SQL Anywhere is the embedded database engine SAP inherited from
+        Sybase/iAnywhere. Its on-disk format is a fixed-size page store with
+        B-tree indexes and a write-ahead log - well-understood in principle
+        but never published as a spec. OpenSQLAnywhere documents the format
+        and ships a reader so the data layer outlives the runtime.
+      </p>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/opensqlanywhere/main.ts"></script>
+</body>
+
+</html>
