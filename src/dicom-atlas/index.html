@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DICOM Atlas - Sigilweaver</title>
+  <meta name="description"
+    content="Open registry of public and private DICOM tags, with Rust and Python access." />
+  <link rel="canonical" href="https://sigilweaver.app/dicom-atlas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DICOM Atlas" />
+  <meta property="og:description" content="Open registry of public and private DICOM tags." />
+  <meta property="og:url" content="https://sigilweaver.app/dicom-atlas/" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
+    <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">DICOM Atlas</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
+      An open registry of <span class="text-gold-400">DICOM</span> tags.
+    </h1>
+    <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
+      Public and private DICOM tags compiled from vendor conformance
+      statements alongside DICOM PS3.6, pydicom, and GDCM. Shipped as a
+      compact <code class="font-mono text-mystic-200">.dmap</code> binary, a
+      Rust crate (<code class="font-mono text-mystic-200">dicom-map</code>), a
+      C-ABI library, and a Python package (<code
+        class="font-mono text-mystic-200">dicom-map</code>).
+    </p>
+
+    <div class="flex flex-wrap gap-3 mb-10 font-mono text-sm">
+      <div class="inline-block rounded-lg border border-mystic-700 bg-mystic-800/50 px-4 py-3 text-mystic-200">
+        pip install dicom-map
+      </div>
+      <div class="inline-block rounded-lg border border-mystic-700 bg-mystic-800/50 px-4 py-3 text-mystic-200">
+        cargo add dicom-map
+      </div>
+    </div>
+
+    <section class="grid gap-4 sm:grid-cols-2 mb-10">
+      <a href="https://pypi.org/project/dicom-map/" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">PyPI</h2>
+        <p class="text-sm text-mystic-400">dicom-map wheels for Linux, macOS, and Windows.</p>
+      </a>
+      <a href="https://github.com/Sigilweaver/DICOM-Atlas" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
+        <p class="text-sm text-mystic-400">Apache-2.0 on GitHub.</p>
+      </a>
+    </section>
+
+    <div class="prose prose-invert max-w-none text-mystic-400">
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">Why another DICOM dictionary?</h2>
+      <p>
+        Most DICOM tools embed the public PS3.6 dictionary and stop there.
+        Private creator blocks - the regions vendors use to ship proprietary
+        metadata - are usually opaque. DICOM Atlas merges the public standard
+        with private blocks scraped from published vendor conformance
+        statements and community sources, then ships the result as a single
+        small binary anyone can load.
+      </p>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/dicom-atlas/main.ts"></script>
+</body>
+
+</html>

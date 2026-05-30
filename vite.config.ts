@@ -42,6 +42,10 @@ export default defineConfig({
         'openqbw/index': resolve(__dirname, 'src/openqbw/index.html'),
         // OpenSQLAnywhere
         'opensqlanywhere/index': resolve(__dirname, 'src/opensqlanywhere/index.html'),
+        // OpenKSpace
+        'openkspace/index': resolve(__dirname, 'src/openkspace/index.html'),
+        // DICOM Atlas
+        'dicom-atlas/index': resolve(__dirname, 'src/dicom-atlas/index.html'),
         // Docs hub
         'docs/index': resolve(__dirname, 'src/docs/index.html'),
       },

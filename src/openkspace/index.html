@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenKSpace - Sigilweaver</title>
+  <meta name="description"
+    content="Rust library and CLI for Cartesian MRI k-space reconstruction from ISMRMRD .h5 files." />
+  <link rel="canonical" href="https://sigilweaver.app/openkspace/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="OpenKSpace" />
+  <meta property="og:description" content="Cartesian MRI k-space reconstruction in Rust." />
+  <meta property="og:url" content="https://sigilweaver.app/openkspace/" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
+    <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">OpenKSpace</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
+      Cartesian MRI <span class="text-gold-400">k-space</span> reconstruction in Rust.
+    </h1>
+    <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
+      A pure-Rust library and CLI for reading ISMRMRD <code
+        class="font-mono text-mystic-200">.h5</code> raw acquisitions and
+      reconstructing Cartesian images. Three crates: <code
+        class="font-mono text-mystic-200">openkspace-io</code> for ISMRMRD I/O,
+      <code class="font-mono text-mystic-200">openkspace-recon</code> for
+      reconstruction primitives, and <code
+        class="font-mono text-mystic-200">openkspace-cli</code> for batch
+      processing.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mb-10 font-mono text-sm">
+      <div class="inline-block rounded-lg border border-mystic-700 bg-mystic-800/50 px-4 py-3 text-mystic-200">
+        cargo install openkspace-cli
+      </div>
+    </div>
+
+    <section class="grid gap-4 sm:grid-cols-2 mb-10">
+      <a href="https://crates.io/crates/openkspace-cli" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">crates.io</h2>
+        <p class="text-sm text-mystic-400">openkspace-io, openkspace-recon, openkspace-cli.</p>
+      </a>
+      <a href="https://github.com/Sigilweaver/OpenKSpace" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
+        <p class="text-sm text-mystic-400">Apache-2.0 on GitHub.</p>
+      </a>
+    </section>
+
+    <div class="prose prose-invert max-w-none text-mystic-400">
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">What is ISMRMRD?</h2>
+      <p>
+        ISMRMRD is the open MRI raw-data format from the ISMRM. OpenKSpace
+        reads ISMRMRD <code class="text-mystic-300">.h5</code> bundles,
+        organizes the acquisitions into a Cartesian k-space grid, and applies
+        FFT-based reconstruction with optional coil combination. The
+        reconstruction crate is designed to be reusable for non-CLI workflows.
+      </p>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/openkspace/main.ts"></script>
+</body>
+
+</html>

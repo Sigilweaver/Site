@@ -183,3 +183,34 @@ export const openqbwNavConfig: NavConfig = {
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenQBW', isExternal: true },
     ],
 };
+
+/**
+ * OpenKSpace section navigation
+ */
+export const openkspaceNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/openkspace/',
+    },
+    links: [
+        { label: 'crates.io', href: 'https://crates.io/crates/openkspace-cli', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenKSpace', isExternal: true },
+    ],
+};
+
+/**
+ * DICOM Atlas section navigation
+ */
+export const dicomAtlasNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/dicom-atlas/',
+    },
+    links: [
+        { label: 'PyPI', href: 'https://pypi.org/project/dicom-map/', isExternal: true },
+        { label: 'crates.io', href: 'https://crates.io/crates/dicom-map', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/DICOM-Atlas', isExternal: true },
+    ],
+};
