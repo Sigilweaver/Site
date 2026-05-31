@@ -152,6 +152,22 @@ export const openproteoNavConfig: NavConfig = {
 };
 
 /**
+ * ProLance section navigation
+ */
+export const prolanceNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/prolance/',
+    },
+    links: [
+        { label: 'Docs', href: '/prolance/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/prolance/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/ProLance', isExternal: true },
+    ],
+};
+
+/**
  * OpenSQLAnywhere section navigation
  */
 export const opensqlanywhereNavConfig: NavConfig = {
