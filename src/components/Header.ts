@@ -7,21 +7,18 @@ import { NavConfig, siteNavConfig } from './config';
 
 export interface HeaderOptions {
     config?: NavConfig;
-    title?: string;
 }
 
 export function createHeader(options: HeaderOptions = {}): string {
-    const { config = siteNavConfig, title } = options;
-
-    const displayTitle = title || 'Sigilweaver';
+    const { config = siteNavConfig } = options;
 
     return `
     <nav class="fixed top-0 w-full z-50 nav-bar" role="navigation" aria-label="Main navigation">
       <div class="container mx-auto px-6 py-3">
         <div class="flex items-center justify-between">
-          <a href="${config.logo.href}" class="flex items-center space-x-2 group">
+          <a href="/" class="flex items-center space-x-2 group">
             <img src="${config.logo.src}" alt="${config.logo.alt}" width="32" height="32" class="w-8 h-8">
-            <span class="text-xl font-bold text-mystic-200 group-hover:text-gold-400 transition-colors">${displayTitle}</span>
+            <span class="text-xl font-bold text-mystic-200 group-hover:text-gold-400 transition-colors">Sigilweaver</span>
           </a>
           <div class="hidden md:flex items-center space-x-8">
             ${config.links.map(link => `

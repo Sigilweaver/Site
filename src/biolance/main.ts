@@ -1,8 +1,8 @@
 import '../styles/global.css';
-import { initializeLayout, openkspaceNavConfig } from '../components';
+import { initializeLayout, biolanceNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: openkspaceNavConfig },
+        header: { config: biolanceNavConfig },
     });
 });

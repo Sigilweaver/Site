@@ -4,6 +4,6 @@ import { initializeLayout, opentimstdfNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: opentimstdfNavConfig, title: 'OpenTimsTDF' },
+        header: { config: opentimstdfNavConfig },
     });
 });

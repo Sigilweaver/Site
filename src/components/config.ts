@@ -44,8 +44,8 @@ export const siteNavConfig: NavConfig = {
 export const loomNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
-        alt: 'Sigilweaver Loom',
-        href: '/loom/',
+        alt: 'Sigilweaver',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/loom/docs' },
@@ -78,7 +78,7 @@ export const openyxdbNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/openyxdb/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/openyxdb/docs' },
@@ -94,7 +94,7 @@ export const opentfrawNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/opentfraw/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/opentfraw/docs' },
@@ -110,7 +110,7 @@ export const opentimstdfNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/opentimstdf/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/opentimstdf/docs' },
@@ -126,7 +126,7 @@ export const openwrawNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/openwraw/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/openwraw/docs' },
@@ -142,7 +142,7 @@ export const openproteoNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/openproteo/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/openproteo/docs' },
@@ -158,7 +158,7 @@ export const prolanceNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/prolance/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/prolance/docs' },
@@ -174,7 +174,7 @@ export const opensqlanywhereNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/opensqlanywhere/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/opensqlanywhere/docs' },
@@ -190,7 +190,7 @@ export const openqbwNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/openqbw/',
+        href: '/',
     },
     links: [
         { label: 'Docs', href: '/openqbw/docs' },
@@ -207,7 +207,7 @@ export const openkspaceNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/openkspace/',
+        href: '/',
     },
     links: [
         { label: 'crates.io', href: 'https://crates.io/crates/openkspace-cli', isExternal: true },
@@ -222,7 +222,7 @@ export const dicomAtlasNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/dicom-atlas/',
+        href: '/',
     },
     links: [
         { label: 'PyPI', href: 'https://pypi.org/project/dicom-map/', isExternal: true },
@@ -238,11 +238,43 @@ export const sigilyxNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
-        href: '/sigilyx/',
+        href: '/',
     },
     links: [
+        { label: 'Docs', href: '/sigilyx/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/sigilyx/', isExternal: true },
         { label: 'crates.io', href: 'https://crates.io/crates/sigilyx', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/SigilYX', isExternal: true },
+    ],
+};
+
+/**
+ * BioLance section navigation
+ */
+export const biolanceNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/',
+    },
+    links: [
+        { label: 'Docs', href: '/biolance/docs/' },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/BioLance', isExternal: true },
+    ],
+};
+
+/**
+ * OpenQVD section navigation
+ */
+export const openqvdNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/',
+    },
+    links: [
+        { label: 'PyPI', href: 'https://pypi.org/project/openqvd/', isExternal: true },
+        { label: 'crates.io', href: 'https://crates.io/crates/openqvd', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenQVD', isExternal: true },
     ],
 };

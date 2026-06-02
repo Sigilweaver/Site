@@ -4,6 +4,6 @@ import { initializeLayout, openwrawNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: openwrawNavConfig, title: 'OpenWRaw' },
+        header: { config: openwrawNavConfig },
     });
 });

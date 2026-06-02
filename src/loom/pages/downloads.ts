@@ -31,7 +31,7 @@ let expandedReleases = new Set<string>();
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
-    header: { config: loomNavConfig, title: 'Sigilweaver Loom' },
+    header: { config: loomNavConfig },
     betaBanner: true,
   });
 

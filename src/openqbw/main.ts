@@ -3,6 +3,6 @@ import { initializeLayout, openqbwNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: openqbwNavConfig, title: 'OpenQBW' },
+        header: { config: openqbwNavConfig },
     });
 });

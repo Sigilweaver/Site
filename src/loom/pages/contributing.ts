@@ -10,7 +10,7 @@ import { createIcons, Wand2, Server, Network, Scroll, Globe, BookOpen, Rocket, H
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
-    header: { config: loomNavConfig, title: 'Sigilweaver Loom' },
+    header: { config: loomNavConfig },
     betaBanner: true,
   });
 

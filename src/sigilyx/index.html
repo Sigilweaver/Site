@@ -14,6 +14,23 @@
   <meta property="og:url" content="https://sigilweaver.app/sigilyx/" />
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
   <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "SigilYX",
+    "description": "Reader and writer for Alteryx YXDB files. Rust core with Python bindings for Polars, PyArrow, and Pandas.",
+    "url": "https://sigilweaver.app/sigilyx/",
+    "codeRepository": "https://github.com/Sigilweaver/SigilYX",
+    "programmingLanguage": "Rust",
+    "license": "https://www.apache.org/licenses/LICENSE-2.0",
+    "author": {
+      "@type": "Organization",
+      "name": "Sigilweaver",
+      "url": "https://sigilweaver.app"
+    }
+  }
+  </script>
 </head>
 
 <body class="min-h-screen flex flex-col font-mystical">
@@ -44,6 +61,11 @@
     </div>
 
     <section class="grid gap-4 sm:grid-cols-2 mb-10">
+      <a href="/sigilyx/docs/"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Docs</h2>
+        <p class="text-sm text-mystic-400">API reference, guides, and examples.</p>
+      </a>
       <a href="https://pypi.org/project/sigilyx/" target="_blank" rel="noopener noreferrer"
         class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
         <h2 class="text-lg font-semibold text-mystic-200 mb-1">PyPI</h2>

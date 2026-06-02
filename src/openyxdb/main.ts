@@ -4,6 +4,6 @@ import { initializeLayout, openyxdbNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: openyxdbNavConfig, title: 'OpenYXDB' },
+        header: { config: openyxdbNavConfig },
     });
 });

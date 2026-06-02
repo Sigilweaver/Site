@@ -3,6 +3,6 @@ import { initializeLayout, sigilyxNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: sigilyxNavConfig, title: 'SigilYX' },
+        header: { config: sigilyxNavConfig },
     });
 });

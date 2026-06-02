@@ -50,6 +50,10 @@ export default defineConfig({
         'dicom-atlas/index': resolve(__dirname, 'src/dicom-atlas/index.html'),
         // SigilYX
         'sigilyx/index': resolve(__dirname, 'src/sigilyx/index.html'),
+        // BioLance
+        'biolance/index': resolve(__dirname, 'src/biolance/index.html'),
+        // OpenQVD
+        'openqvd/index': resolve(__dirname, 'src/openqvd/index.html'),
         // Docs hub
         'docs/index': resolve(__dirname, 'src/docs/index.html'),
       },

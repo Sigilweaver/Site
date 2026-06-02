@@ -134,14 +134,31 @@ const projectStubs = [
       { loc: '/prolance/', file: 'src/prolance/index.html', changefreq: 'monthly', priority: '0.8' },
     ],
   },
+  {
+    dir: 'sigilyx',
+    pages: [
+      { loc: '/sigilyx/', file: 'src/sigilyx/index.html', changefreq: 'monthly', priority: '0.8' },
+    ],
+  },
+  {
+    dir: 'biolance',
+    pages: [
+      { loc: '/biolance/', file: 'src/biolance/index.html', changefreq: 'monthly', priority: '0.8' },
+    ],
+  },
+  {
+    dir: 'openqvd',
+    pages: [
+      { loc: '/openqvd/', file: 'src/openqvd/index.html', changefreq: 'monthly', priority: '0.8' },
+    ],
+  },
 ];
 
 // Docusaurus-generated sitemaps - produced by each project's own build, not this
 // script. Listed in the main index so Google crawls every doc page.
-// Note: SigilYX owns the entire /sigilyx/ path (Docusaurus baseUrl: '/sigilyx/').
-// Note: OpenTimsTDF config uses '/OpenTimsTDF/docs/' - verify deployment path casing.
 const docusaurusSitemaps = [
   '/blog/sitemap.xml',
+  '/biolance/docs/sitemap.xml',
   '/dicom-atlas/docs/sitemap.xml',
   '/loom/docs/sitemap.xml',
   '/openkspace/docs/sitemap.xml',
@@ -153,7 +170,7 @@ const docusaurusSitemaps = [
   '/openwraw/docs/sitemap.xml',
   '/openyxdb/docs/sitemap.xml',
   '/prolance/docs/sitemap.xml',
-  '/sigilyx/sitemap.xml',
+  '/sigilyx/docs/sitemap.xml',
 ];
 
 // ------------------------------------------------------------------ main

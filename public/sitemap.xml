@@ -37,7 +37,19 @@
     <loc>https://sigilweaver.app/prolance/sitemap.xml</loc>
   </sitemap>
   <sitemap>
+    <loc>https://sigilweaver.app/sigilyx/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/biolance/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openqvd/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
     <loc>https://sigilweaver.app/blog/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/biolance/docs/sitemap.xml</loc>
   </sitemap>
   <sitemap>
     <loc>https://sigilweaver.app/dicom-atlas/docs/sitemap.xml</loc>
@@ -73,6 +85,6 @@
     <loc>https://sigilweaver.app/prolance/docs/sitemap.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://sigilweaver.app/sigilyx/sitemap.xml</loc>
+    <loc>https://sigilweaver.app/sigilyx/docs/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>

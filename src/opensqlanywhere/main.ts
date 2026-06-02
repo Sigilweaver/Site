@@ -3,6 +3,6 @@ import { initializeLayout, opensqlanywhereNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: opensqlanywhereNavConfig, title: 'OpenSQLAnywhere' },
+        header: { config: opensqlanywhereNavConfig },
     });
 });

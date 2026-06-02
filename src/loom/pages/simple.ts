@@ -10,7 +10,7 @@ import { createIcons, Clipboard, Heart } from 'lucide';
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
-    header: { config: loomSimpleNavConfig, title: 'Sigilweaver Loom' },
+    header: { config: loomSimpleNavConfig },
   });
 
   createIcons({

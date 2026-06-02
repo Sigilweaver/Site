@@ -4,6 +4,6 @@ import { initializeLayout, prolanceNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: prolanceNavConfig, title: 'ProLance' },
+        header: { config: prolanceNavConfig },
     });
 });

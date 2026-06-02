@@ -4,6 +4,6 @@ import { initializeLayout, opentfrawNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: opentfrawNavConfig, title: 'OpenTFRaw' },
+        header: { config: opentfrawNavConfig },
     });
 });
