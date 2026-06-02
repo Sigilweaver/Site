@@ -7,10 +7,19 @@
     <loc>https://sigilweaver.app/loom/sitemap-core.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://sigilweaver.app/loom/docs/sitemap.xml</loc>
+    <loc>https://sigilweaver.app/dicom-atlas/sitemap.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://sigilweaver.app/openyxdb/sitemap.xml</loc>
+    <loc>https://sigilweaver.app/openkspace/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openproteo/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openqbw/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/opensqlanywhere/sitemap.xml</loc>
   </sitemap>
   <sitemap>
     <loc>https://sigilweaver.app/opentfraw/sitemap.xml</loc>
@@ -20,5 +29,50 @@
   </sitemap>
   <sitemap>
     <loc>https://sigilweaver.app/openwraw/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openyxdb/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/prolance/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/blog/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/dicom-atlas/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/loom/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openkspace/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openproteo/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openqbw/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/opensqlanywhere/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/opentfraw/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/opentimstdf/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openwraw/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/openyxdb/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/prolance/docs/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://sigilweaver.app/sigilyx/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>
