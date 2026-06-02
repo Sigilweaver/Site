@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "vite",
         "sitemap": "node scripts/generate-sitemaps.mjs",
-        "build": "bun run sitemap && tsc && vite build",
+        "llms": "node scripts/generate-llms.mjs",
+        "build": "bun run sitemap && bun run llms && tsc && vite build",
         "preview": "vite preview",
         "test": "vitest run",
         "deploy": "bun run build && bunx wrangler deploy"

@@ -3,3 +3,5 @@ dist/
 .wrangler/
 *.log
 .DS_Store
+# Generated at build time - do not commit
+public/llms.txt
