@@ -141,9 +141,9 @@ const projectStubs = [
     ],
   },
   {
-    dir: 'biolance',
+    dir: 'genolance',
     pages: [
-      { loc: '/biolance/', file: 'src/biolance/index.html', changefreq: 'monthly', priority: '0.8' },
+      { loc: '/genolance/', file: 'src/genolance/index.html', changefreq: 'monthly', priority: '0.8' },
     ],
   },
   {
@@ -158,7 +158,7 @@ const projectStubs = [
 // script. Listed in the main index so Google crawls every doc page.
 const docusaurusSitemaps = [
   '/blog/sitemap.xml',
-  '/biolance/docs/sitemap.xml',
+  '/genolance/docs/sitemap.xml',
   '/dicom-atlas/docs/sitemap.xml',
   '/loom/docs/sitemap.xml',
   '/openkspace/docs/sitemap.xml',

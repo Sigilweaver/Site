@@ -249,17 +249,17 @@ export const sigilyxNavConfig: NavConfig = {
 };
 
 /**
- * BioLance section navigation
+ * GenoLance section navigation
  */
-export const biolanceNavConfig: NavConfig = {
+export const genolanceNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/biolance/docs/' },
-        { label: 'GitHub', href: 'https://github.com/Sigilweaver/BioLance', isExternal: true },
+        { label: 'Docs', href: '/genolance/docs/' },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/GenoLance', isExternal: true },
     ],
 };
 

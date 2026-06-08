@@ -25,7 +25,7 @@ Sigilweaver builds fast, portable implementations of proprietary and underdocume
 
 ## Genomics
 
-- [BioLance](https://sigilweaver.app/biolance/docs/): Columnar multi-sample variant store. Ingests VCFs into LanceDB (Arrow columns). Query, join against ClinVar, and compare variants across samples in a single process. No Spark, no cloud infrastructure.
+- [GenoLance](https://sigilweaver.app/genolance/docs/): Columnar multi-sample variant store. Ingests VCFs into LanceDB (Arrow columns). Query, join against ClinVar, and compare variants across samples in a single process. No Spark, no cloud infrastructure.
 
 ## Mass Spectrometry
 

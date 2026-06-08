@@ -1,8 +1,8 @@
 import '../styles/global.css';
-import { initializeLayout, biolanceNavConfig } from '../components';
+import { initializeLayout, genolanceNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: biolanceNavConfig },
+        header: { config: genolanceNavConfig },
     });
 });
