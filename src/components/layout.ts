@@ -10,14 +10,13 @@ import { siteNavConfig } from './config';
 export interface LayoutOptions {
     header?: HeaderOptions | false;
     footer?: FooterConfig | false;
-    betaBanner?: boolean;
 }
 
 /**
  * Initialize the page layout
  */
 export function initializeLayout(options: LayoutOptions = {}): void {
-    const { header = {}, footer = defaultFooterConfig, betaBanner = false } = options;
+    const { header = {}, footer = defaultFooterConfig } = options;
 
     // Skip link
     document.body.insertAdjacentHTML(
@@ -33,21 +32,6 @@ export function initializeLayout(options: LayoutOptions = {}): void {
             headerContainer.innerHTML = html;
         } else {
             document.body.insertAdjacentHTML('afterbegin', html);
-        }
-
-        // Optional beta banner after header
-        if (betaBanner) {
-            const nav = document.querySelector('nav[role="navigation"]');
-            if (nav) {
-                nav.insertAdjacentHTML('afterend', `
-          <div class="fixed top-[60px] w-full z-40 bg-gold-500/90 backdrop-blur-sm text-mystic-900 text-center text-sm py-2 px-4 font-medium" role="status">
-            <span class="inline-flex items-center gap-2 flex-wrap justify-center">
-              <span class="bg-mystic-900 text-gold-400 text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wider">Private Beta</span>
-              <span>Sigilweaver Loom is in private beta — the repository is private and downloads are not yet available.</span>
-            </span>
-          </div>
-        `);
-            }
         }
     }
 

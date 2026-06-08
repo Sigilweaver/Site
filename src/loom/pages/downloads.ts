@@ -32,7 +32,6 @@ let expandedReleases = new Set<string>();
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
     header: { config: loomNavConfig },
-    betaBanner: true,
   });
 
   // Initialize downloads-specific functionality

@@ -10,7 +10,6 @@ import { createIcons, Shield, Check, Globe, Clipboard, AlertTriangle, BookOpen, 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
     header: { config: loomNavConfig },
-    betaBanner: true,
   });
 
   createIcons({

@@ -11,7 +11,6 @@ import { createIcons, Wand2, Server, Network, Scroll, Globe, BookOpen, Rocket, H
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
     header: { config: loomNavConfig },
-    betaBanner: true,
   });
 
   // Initialize icons
