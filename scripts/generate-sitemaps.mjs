@@ -129,9 +129,9 @@ const projectStubs = [
     ],
   },
   {
-    dir: 'prolance',
+    dir: 'speclance',
     pages: [
-      { loc: '/prolance/', file: 'src/prolance/index.html', changefreq: 'monthly', priority: '0.8' },
+      { loc: '/speclance/', file: 'src/speclance/index.html', changefreq: 'monthly', priority: '0.8' },
     ],
   },
   {
@@ -169,7 +169,7 @@ const docusaurusSitemaps = [
   '/opentimstdf/docs/sitemap.xml',
   '/openwraw/docs/sitemap.xml',
   '/openyxdb/docs/sitemap.xml',
-  '/prolance/docs/sitemap.xml',
+  '/speclance/docs/sitemap.xml',
   '/sigilyx/docs/sitemap.xml',
 ];
 

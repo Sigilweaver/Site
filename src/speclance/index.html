@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProLance - Sigilweaver</title>
+    <title>SpecLance - Sigilweaver</title>
     <meta name="description"
         content="Columnar, memory-mapped mass-spectrometry store built on Lance. Ingest via OpenProteo or mzML; query from Rust, Python, or the CLI." />
-    <link rel="canonical" href="https://sigilweaver.app/prolance/" />
+    <link rel="canonical" href="https://sigilweaver.app/speclance/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ProLance" />
+    <meta property="og:title" content="SpecLance" />
     <meta property="og:description"
         content="Lance-backed mass-spec storage. PyArrow / Polars / Pandas-ready. Multi-run directories, export back to mzML." />
-    <meta property="og:url" content="https://sigilweaver.app/prolance/" />
+    <meta property="og:url" content="https://sigilweaver.app/speclance/" />
     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareSourceCode",
-      "name": "ProLance",
+      "name": "SpecLance",
       "description": "Lance-backed mass-spec storage. PyArrow / Polars / Pandas-ready. Multi-run directories, export back to mzML.",
-      "url": "https://sigilweaver.app/prolance/",
-      "codeRepository": "https://github.com/Sigilweaver/ProLance",
+      "url": "https://sigilweaver.app/speclance/",
+      "codeRepository": "https://github.com/Sigilweaver/SpecLance",
       "programmingLanguage": "Rust",
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "author": {
@@ -38,13 +38,13 @@
     <div id="header-root"></div>
 
     <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
-        <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">ProLance</p>
+        <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">SpecLance</p>
         <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
             A <span class="text-gold-400">columnar</span> mass-spec store
             on <span class="text-gold-400">Lance</span>.
         </h1>
         <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
-            ProLance ingests vendor formats via
+            SpecLance ingests vendor formats via
             <a href="/openproteo/" class="text-gold-400 hover:text-gold-300">OpenProteo</a>
             or mzML, writes them into a memory-mapped
             <a href="https://lancedb.github.io/lance/" class="text-gold-400 hover:text-gold-300" target="_blank" rel="noopener noreferrer">Lance</a>
@@ -54,25 +54,25 @@
         </p>
 
         <section class="grid gap-4 sm:grid-cols-2 mb-10">
-            <a href="/prolance/docs"
+            <a href="/speclance/docs"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">Docs</h2>
                 <p class="text-sm text-mystic-400">Quickstart, schema, and query API.</p>
             </a>
-            <a href="https://github.com/Sigilweaver/ProLance" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/Sigilweaver/SpecLance" target="_blank" rel="noopener noreferrer"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
                 <p class="text-sm text-mystic-400">Apache-2.0 on GitHub.</p>
             </a>
-            <a href="https://pypi.org/project/prolance/" target="_blank" rel="noopener noreferrer"
+            <a href="https://pypi.org/project/speclance/" target="_blank" rel="noopener noreferrer"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">PyPI</h2>
-                <p class="text-sm text-mystic-400">Install with <code class="font-mono text-mystic-300">pip install prolance</code>.</p>
+                <p class="text-sm text-mystic-400">Install with <code class="font-mono text-mystic-300">pip install speclance</code>.</p>
             </a>
-            <a href="https://crates.io/crates/prolance-core" target="_blank" rel="noopener noreferrer"
+            <a href="https://crates.io/crates/speclance-core" target="_blank" rel="noopener noreferrer"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">crates.io</h2>
-                <p class="text-sm text-mystic-400">The <code class="font-mono text-mystic-300">prolance-core</code> Rust crate.</p>
+                <p class="text-sm text-mystic-400">The <code class="font-mono text-mystic-300">speclance-core</code> Rust crate.</p>
             </a>
         </section>
 
@@ -80,7 +80,7 @@
             <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">Why Lance</h2>
             <p>
                 Lance is a modern columnar table format designed for
-                vector search and ML workloads. ProLance treats each MS run
+                vector search and ML workloads. SpecLance treats each MS run
                 as a Lance dataset, which gives memory-mapped reads, cheap
                 random seeks across millions of spectra, and direct PyArrow
                 / Polars / Pandas zero-copy access - without spinning up

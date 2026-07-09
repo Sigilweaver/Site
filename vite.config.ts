@@ -38,8 +38,8 @@ export default defineConfig({
         'openwraw/index': resolve(__dirname, 'src/openwraw/index.html'),
         // OpenProteo
         'openproteo/index': resolve(__dirname, 'src/openproteo/index.html'),
-        // ProLance
-        'prolance/index': resolve(__dirname, 'src/prolance/index.html'),
+        // SpecLance
+        'speclance/index': resolve(__dirname, 'src/speclance/index.html'),
         // OpenQBW
         'openqbw/index': resolve(__dirname, 'src/openqbw/index.html'),
         // OpenSQLAnywhere

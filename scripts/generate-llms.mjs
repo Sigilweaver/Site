@@ -33,7 +33,7 @@ Sigilweaver builds fast, portable implementations of proprietary and underdocume
 - [OpenWRaw](https://sigilweaver.app/openwraw/docs/): Rust and Python reader for Waters MassLynx RAW mass spectrometry files. No Waters software required.
 - [OpenTimsTDF](https://sigilweaver.app/opentimstdf/docs/): Rust and Python reader for Bruker timsTOF TDF files. No Bruker software required.
 - [OpenProteo](https://sigilweaver.app/openproteo/docs/): Open Rust stack for proteomics raw-file access. Read Thermo, Bruker, and Waters acquisitions through a single unified API.
-- [ProLance](https://sigilweaver.app/prolance/docs/): Fast, columnar, memory-mapped mass spectrometry data store powered by Lance and Arrow. Designed for large-scale proteomics workflows.
+- [SpecLance](https://sigilweaver.app/speclance/docs/): Fast, columnar, memory-mapped mass spectrometry data store powered by Lance and Arrow. Designed for large-scale proteomics workflows.
 
 ## Medical Imaging
 

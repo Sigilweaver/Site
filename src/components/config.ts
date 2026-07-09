@@ -152,18 +152,18 @@ export const openproteoNavConfig: NavConfig = {
 };
 
 /**
- * ProLance section navigation
+ * SpecLance section navigation
  */
-export const prolanceNavConfig: NavConfig = {
+export const speclanceNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/prolance/docs' },
-        { label: 'PyPI', href: 'https://pypi.org/project/prolance/', isExternal: true },
-        { label: 'GitHub', href: 'https://github.com/Sigilweaver/ProLance', isExternal: true },
+        { label: 'Docs', href: '/speclance/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/speclance/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/SpecLance', isExternal: true },
     ],
 };
 
