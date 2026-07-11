@@ -136,18 +136,18 @@ export const openwrawNavConfig: NavConfig = {
 };
 
 /**
- * OpenProteo section navigation
+ * OpenMassSpec section navigation
  */
-export const openproteoNavConfig: NavConfig = {
+export const openmassspecNavConfig: NavConfig = {
     logo: {
         src: '/icons/sigilweaver-logo.svg',
         alt: 'Sigilweaver',
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/openproteo/docs' },
-        { label: 'PyPI', href: 'https://pypi.org/project/openproteo/', isExternal: true },
-        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenProteo', isExternal: true },
+        { label: 'Docs', href: '/openmassspec/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/openmassspec/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenMassSpec', isExternal: true },
     ],
 };
 

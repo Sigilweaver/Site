@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenProteo - Sigilweaver</title>
+    <title>OpenMassSpec - Sigilweaver</title>
     <meta name="description"
         content="Open-source Rust stack for proteomics raw-file access. Read Thermo, Bruker, and Waters acquisitions through a single API - no vendor SDKs." />
-    <link rel="canonical" href="https://sigilweaver.app/openproteo/" />
+    <link rel="canonical" href="https://sigilweaver.app/openmassspec/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="OpenProteo" />
+    <meta property="og:title" content="OpenMassSpec" />
     <meta property="og:description"
         content="Unified Rust stack for Thermo, Bruker, and Waters raw files. Single API, mzML conversion, Arrow output." />
-    <meta property="og:url" content="https://sigilweaver.app/openproteo/" />
+    <meta property="og:url" content="https://sigilweaver.app/openmassspec/" />
     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareSourceCode",
-      "name": "OpenProteo",
+      "name": "OpenMassSpec",
       "description": "Unified Rust stack for Thermo, Bruker, and Waters raw files. Single API, mzML conversion, Arrow output.",
-      "url": "https://sigilweaver.app/openproteo/",
-      "codeRepository": "https://github.com/Sigilweaver/OpenProteo",
+      "url": "https://sigilweaver.app/openmassspec/",
+      "codeRepository": "https://github.com/Sigilweaver/OpenMassSpec",
       "programmingLanguage": "Rust",
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "author": {
@@ -38,40 +38,40 @@
     <div id="header-root"></div>
 
     <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
-        <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">OpenProteo</p>
+        <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">OpenMassSpec</p>
         <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
             Read <span class="text-gold-400">Thermo</span>,
             <span class="text-gold-400">Bruker</span>, and
             <span class="text-gold-400">Waters</span> data in Rust and Python.
         </h1>
         <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
-            OpenProteo is the open-source Rust stack for proteomics raw-file access.
-            Read acquisitions from three vendor formats through a single API, convert
+            OpenMassSpec is the open-source Rust stack for mass spectrometry raw-file
+            access. Read acquisitions from three vendor formats through a single API, convert
             to PSI-MS mzML 1.1.0, and stream into Arrow for downstream analytics. No
             vendor SDKs, no Windows-only DLLs.
         </p>
 
         <section class="grid gap-4 sm:grid-cols-2 mb-10">
-            <a href="/openproteo/docs"
+            <a href="/openmassspec/docs"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">Docs</h2>
                 <p class="text-sm text-mystic-400">API reference, quickstart, and format guides.</p>
             </a>
-            <a href="https://github.com/Sigilweaver/OpenProteo" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/Sigilweaver/OpenMassSpec" target="_blank" rel="noopener noreferrer"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
                 <p class="text-sm text-mystic-400">Apache-2.0 on GitHub.</p>
             </a>
-            <a href="https://pypi.org/project/openproteo/" target="_blank" rel="noopener noreferrer"
+            <a href="https://pypi.org/project/openmassspec/" target="_blank" rel="noopener noreferrer"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">PyPI</h2>
                 <p class="text-sm text-mystic-400">Install with <code
-                        class="font-mono text-mystic-300">pip install openproteo</code>.</p>
+                        class="font-mono text-mystic-300">pip install openmassspec</code>.</p>
             </a>
-            <a href="https://crates.io/crates/openproteo-io" target="_blank" rel="noopener noreferrer"
+            <a href="https://crates.io/crates/openmassspec-io" target="_blank" rel="noopener noreferrer"
                 class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
                 <h2 class="text-lg font-semibold text-mystic-200 mb-1">crates.io</h2>
-                <p class="text-sm text-mystic-400">The <code class="font-mono text-mystic-300">openproteo-io</code> Rust
+                <p class="text-sm text-mystic-400">The <code class="font-mono text-mystic-300">openmassspec-io</code> Rust
                     crate.</p>
             </a>
         </section>
@@ -79,7 +79,7 @@
         <div class="prose prose-invert max-w-none text-mystic-400">
             <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">The stack</h2>
             <p>
-                OpenProteo is an umbrella over three vendor-specific parsers, each
+                OpenMassSpec is an umbrella over three vendor-specific parsers, each
                 reverse-engineered without the vendor SDK:
             </p>
             <ul class="mt-3 space-y-2">
@@ -108,16 +108,16 @@
                 converts any supported acquisition to PSI-MS mzML 1.1.0 with a single
                 command. Pre-built binaries for Linux, macOS, and Windows ship with
                 every release. The same logic is available from Python via the
-                <code class="font-mono text-mystic-200">openproteo</code> metapackage
+                <code class="font-mono text-mystic-200">openmassspec</code> metapackage
                 and from Rust via the
-                <code class="font-mono text-mystic-200">openproteo-io</code> crate.
+                <code class="font-mono text-mystic-200">openmassspec-io</code> crate.
             </p>
         </div>
     </main>
 
     <div id="footer-root"></div>
 
-    <script type="module" src="/openproteo/main.ts"></script>
+    <script type="module" src="/openmassspec/main.ts"></script>
 </body>
 
 </html>

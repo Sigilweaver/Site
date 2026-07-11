@@ -83,9 +83,9 @@ const projectStubs = [
     ],
   },
   {
-    dir: 'openproteo',
+    dir: 'openmassspec',
     pages: [
-      { loc: '/openproteo/', file: 'src/openproteo/index.html', changefreq: 'monthly', priority: '0.8' },
+      { loc: '/openmassspec/', file: 'src/openmassspec/index.html', changefreq: 'monthly', priority: '0.8' },
     ],
   },
   {
@@ -162,7 +162,7 @@ const docusaurusSitemaps = [
   '/dicom-atlas/docs/sitemap.xml',
   '/loom/docs/sitemap.xml',
   '/openkspace/docs/sitemap.xml',
-  '/openproteo/docs/sitemap.xml',
+  '/openmassspec/docs/sitemap.xml',
   '/openqbw/docs/sitemap.xml',
   '/opensqlanywhere/docs/sitemap.xml',
   '/opentfraw/docs/sitemap.xml',

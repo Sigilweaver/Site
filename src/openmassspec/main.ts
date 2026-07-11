@@ -1,9 +1,9 @@
 import '../styles/global.css';
 import './styles/main.css';
-import { initializeLayout, openproteoNavConfig } from '../components';
+import { initializeLayout, openmassspecNavConfig } from '../components';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLayout({
-        header: { config: openproteoNavConfig },
+        header: { config: openmassspecNavConfig },
     });
 });

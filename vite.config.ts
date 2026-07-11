@@ -36,8 +36,8 @@ export default defineConfig({
         'opentimstdf/index': resolve(__dirname, 'src/opentimstdf/index.html'),
         // OpenWRaw
         'openwraw/index': resolve(__dirname, 'src/openwraw/index.html'),
-        // OpenProteo
-        'openproteo/index': resolve(__dirname, 'src/openproteo/index.html'),
+        // OpenMassSpec
+        'openmassspec/index': resolve(__dirname, 'src/openmassspec/index.html'),
         // SpecLance
         'speclance/index': resolve(__dirname, 'src/speclance/index.html'),
         // OpenQBW
