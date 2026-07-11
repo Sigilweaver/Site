@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenSXRaw - Sigilweaver</title>
+  <meta name="description"
+    content="Clean-room Rust and Python reader for SCIEX .wiff / .wiff.scan legacy files, reverse-engineered without the vendor SDK." />
+  <link rel="canonical" href="https://sigilweaver.app/opensxraw/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="OpenSXRaw" />
+  <meta property="og:description"
+    content="Pure-Rust parser for SCIEX .wiff / .wiff.scan legacy files. No vendor SDK required." />
+  <meta property="og:url" content="https://sigilweaver.app/opensxraw/" />
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "OpenSXRaw",
+    "description": "Pure-Rust parser for SCIEX .wiff / .wiff.scan legacy files. No vendor SDK required.",
+    "url": "https://sigilweaver.app/opensxraw/",
+    "codeRepository": "https://github.com/Sigilweaver/OpenSXRaw",
+    "programmingLanguage": "Rust",
+    "license": "https://www.apache.org/licenses/LICENSE-2.0",
+    "author": {
+      "@type": "Organization",
+      "name": "Sigilweaver",
+      "url": "https://sigilweaver.app"
+    }
+  }
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col font-mystical">
+  <div id="header-root"></div>
+
+  <main id="main-content" class="flex-1 container mx-auto px-6 py-16 pt-28 max-w-3xl">
+    <p class="text-sm uppercase tracking-wider text-gold-400 mb-3">OpenSXRaw</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-mystic-200 mb-5 leading-tight">
+      Read SCIEX <span class="text-gold-400">.wiff</span> data in
+      <span class="text-gold-400">Rust</span> and <span class="text-gold-400">Python</span>.
+    </h1>
+    <p class="text-lg text-mystic-400 mb-10 max-w-2xl">
+      A pure-Rust parser for SCIEX's legacy
+      <code class="font-mono text-mystic-200">.wiff</code> /
+      <code class="font-mono text-mystic-200">.wiff.scan</code> format,
+      reverse-engineered without the vendor SDK. Covers the TripleTOF and
+      QTRAP instrument families.
+    </p>
+
+    <section class="grid gap-4 sm:grid-cols-2 mb-10">
+      <a href="/opensxraw/docs"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Docs</h2>
+        <p class="text-sm text-mystic-400">Format notes, API reference, and quickstart.</p>
+      </a>
+      <a href="https://github.com/Sigilweaver/OpenSXRaw" target="_blank" rel="noopener noreferrer"
+        class="block p-5 rounded-xl border border-mystic-700 bg-mystic-800/40 hover:border-gold-500/50 transition-colors">
+        <h2 class="text-lg font-semibold text-mystic-200 mb-1">Source</h2>
+        <p class="text-sm text-mystic-400">Apache-2.0 on GitHub.</p>
+      </a>
+    </section>
+
+    <div class="prose prose-invert max-w-none text-mystic-400">
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">What is a SCIEX .wiff file?</h2>
+      <p>
+        SCIEX's legacy <code class="font-mono text-mystic-200">.wiff</code> is a
+        CFBF (Compound File Binary Format) container paired with a flat
+        <code class="font-mono text-mystic-200">.wiff.scan</code> file that
+        holds the scan blocks. The format is closed and the first-party access
+        path is the Windows Clearcore SDK. OpenSXRaw reconstructs the on-disk
+        layout from first principles so the data is readable on any platform
+        with Rust or Python.
+      </p>
+      <h2 class="text-xl font-semibold text-mystic-200 mt-8 mb-3">Coverage</h2>
+      <p>
+        Decodes the CFBF stream catalog, the
+        <code class="font-mono text-mystic-200">Idx</code> scan index, and the
+        custom prefix-encoded scan blocks in
+        <code class="font-mono text-mystic-200">.wiff.scan</code>. Distributed
+        as a Rust crate and a maturin-built Python wheel. SCIEX's newer,
+        encrypted <code class="font-mono text-mystic-200">.wiff2</code> format
+        is documented but deferred; see the docs for details.
+      </p>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/opensxraw/main.ts"></script>
+</body>
+
+</html>

@@ -36,6 +36,10 @@ export default defineConfig({
         'opentimstdf/index': resolve(__dirname, 'src/opentimstdf/index.html'),
         // OpenWRaw
         'openwraw/index': resolve(__dirname, 'src/openwraw/index.html'),
+        // OpenARaw
+        'openaraw/index': resolve(__dirname, 'src/openaraw/index.html'),
+        // OpenSXRaw
+        'opensxraw/index': resolve(__dirname, 'src/opensxraw/index.html'),
         // OpenMassSpec
         'openmassspec/index': resolve(__dirname, 'src/openmassspec/index.html'),
         // SpecLance

@@ -136,6 +136,38 @@ export const openwrawNavConfig: NavConfig = {
 };
 
 /**
+ * OpenARaw section navigation
+ */
+export const openarawNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/',
+    },
+    links: [
+        { label: 'Docs', href: '/openaraw/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/openaraw/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenARaw', isExternal: true },
+    ],
+};
+
+/**
+ * OpenSXRaw section navigation
+ */
+export const opensxrawNavConfig: NavConfig = {
+    logo: {
+        src: '/icons/sigilweaver-logo.svg',
+        alt: 'Sigilweaver',
+        href: '/',
+    },
+    links: [
+        { label: 'Docs', href: '/opensxraw/docs' },
+        { label: 'PyPI', href: 'https://pypi.org/project/opensxraw/', isExternal: true },
+        { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenSXRaw', isExternal: true },
+    ],
+};
+
+/**
  * OpenMassSpec section navigation
  */
 export const openmassspecNavConfig: NavConfig = {

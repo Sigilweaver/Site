@@ -122,6 +122,20 @@ const projectStubs = [
     ],
   },
   {
+    dir: 'openaraw',
+    pages: [
+      { loc: '/openaraw/', file: 'src/openaraw/index.html', changefreq: 'monthly', priority: '0.8' },
+      { loc: '/openaraw/docs', file: null, changefreq: 'weekly', priority: '0.7' },
+    ],
+  },
+  {
+    dir: 'opensxraw',
+    pages: [
+      { loc: '/opensxraw/', file: 'src/opensxraw/index.html', changefreq: 'monthly', priority: '0.8' },
+      { loc: '/opensxraw/docs', file: null, changefreq: 'weekly', priority: '0.7' },
+    ],
+  },
+  {
     dir: 'openyxdb',
     pages: [
       { loc: '/openyxdb/', file: 'src/openyxdb/index.html', changefreq: 'monthly', priority: '0.8' },
