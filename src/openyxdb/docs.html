@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docs — OpenYXDB</title>
+  <title>Docs - OpenYXDB</title>
   <meta name="description" content="OpenYXDB documentation." />
   <link rel="canonical" href="https://sigilweaver.app/openyxdb/docs" />
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
@@ -17,7 +17,7 @@
   <main id="main-content" class="flex-1 container mx-auto px-6 py-12 pt-28 max-w-3xl">
     <h1 class="text-3xl sm:text-4xl font-bold text-mystic-200 mb-2">Documentation</h1>
     <p class="text-mystic-400 mb-10">
-      This is a stub site — the canonical reference lives in the
+      This is a stub site - the canonical reference lives in the
       <a href="https://github.com/Sigilweaver/OpenYXDB/blob/main/README.md" class="text-gold-400 hover:underline"
         target="_blank" rel="noopener noreferrer">repo README</a>
       and the Python package docstrings. We will expand this as the package
@@ -53,7 +53,7 @@ openyxdb.from_polars(df, "out.yxdb")</code></pre>
         <code class="font-mono text-mystic-200">scan_yxdb</code> pushes
         column projection and row limits down to the C++ reader and streams
         results in chunks (default 65,536 rows). Predicate pushdown is not
-        supported at the file level — YXDB has no per-block statistics — so
+        supported at the file level; YXDB has no per-block statistics, so
         predicates run on the in-memory chunk after decode.
       </p>
     </section>

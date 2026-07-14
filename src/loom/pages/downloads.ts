@@ -5,6 +5,7 @@
 import '../../styles/global.css';
 import '@styles/main.css';
 import { initializeLayout, loomNavConfig } from '../../components';
+import { createIcons, Lock } from 'lucide';
 import {
   type DownloadAsset,
   type DownloadsData,
@@ -32,6 +33,10 @@ let expandedReleases = new Set<string>();
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
     header: { config: loomNavConfig },
+  });
+
+  createIcons({
+    icons: { Lock }
   });
 
   // Initialize downloads-specific functionality

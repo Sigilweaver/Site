@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GenoLance - Sigilweaver</title>
   <meta name="description"
-    content="Fast, columnar multi-sample variant store built on Lance and Arrow. Ingest VCFs, query variants, and join against ClinVar — no Spark, no cloud." />
+    content="Fast, columnar multi-sample variant store built on Lance and Arrow. Ingest VCFs, query variants, and join against ClinVar - no Spark, no cloud." />
   <link rel="canonical" href="https://sigilweaver.app/genolance/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="GenoLance" />
@@ -46,7 +46,7 @@
       <a href="https://lancedb.github.io/lance/" target="_blank" rel="noopener noreferrer"
         class="text-mystic-200 underline underline-offset-2">LanceDB</a>
       directory where every field is an Arrow column. Query, join, and compare
-      variants across samples in a single process — no Spark, no cloud, no GenomicsDB.
+      variants across samples in a single process - no Spark, no cloud, no GenomicsDB.
     </p>
 
     <div class="flex flex-wrap gap-3 mb-10 font-mono text-sm">
@@ -74,7 +74,7 @@
         Standard bioinformatics pipelines produce one VCF per sample. Comparing variants
         across dozens or hundreds of samples means joining files that were never designed
         for cross-sample queries. GenoLance solves this by converting VCFs into a Lance
-        columnar store — one Arrow row per (sample, chrom, pos, ref, alt) — so region
+        columnar store, one Arrow row per (sample, chrom, pos, ref, alt), so region
         queries, ClinVar annotation joins, and multi-sample comparisons run out of a
         single directory with no infrastructure overhead.
       </p>

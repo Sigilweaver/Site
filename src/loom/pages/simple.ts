@@ -6,7 +6,7 @@
 import '../../styles/global.css';
 import '@styles/main.css';
 import { initializeLayout, loomSimpleNavConfig } from '../../components';
-import { createIcons, Clipboard, Heart } from 'lucide';
+import { createIcons, Clipboard, Heart, BookOpen } from 'lucide';
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLayout({
@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   createIcons({
     icons: {
       Clipboard,
-      Heart
+      Heart,
+      BookOpen
     }
   });
 });
