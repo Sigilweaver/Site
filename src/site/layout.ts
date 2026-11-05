@@ -95,7 +95,7 @@ export function renderHead(o: HeadOptions): string {
  * Applies a stored theme choice before first paint. Inline on purpose: an
  * external script would let the page flash in the wrong theme.
  */
-export const THEME_SCRIPT = `<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>`;
+export const THEME_SCRIPT = `<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){console.warn('Theme preference unavailable:',e);}})();</script>`;
 
 /** Theme script, theme colour, icons, manifest and fonts shared by every page. */
 export function renderHeadAssets(): string {

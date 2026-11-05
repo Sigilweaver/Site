@@ -61,8 +61,9 @@ function storedTheme(): Theme | null {
     try {
         const t = localStorage.getItem('theme');
         return t === 'light' || t === 'dark' ? t : null;
-    } catch {
+    } catch (err) {
         // Storage can be blocked (private mode, cookie settings); fall back to the system theme.
+        console.warn('Could not read the saved theme; using the system theme.', err);
         return null;
     }
 }
