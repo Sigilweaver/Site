@@ -4,10 +4,8 @@
  */
 
 import '../styles/global.css';
-import { initializeLayout, siteNavConfig } from '../components';
+import { initSite } from '../site/client';
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeLayout({
-        header: { config: siteNavConfig },
-    });
+    initSite();
 });

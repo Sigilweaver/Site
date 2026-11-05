@@ -16,6 +16,8 @@ import { mkdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+// Node 22.18+ strips TypeScript types, so the catalog can be imported directly.
+import { PROJECTS } from '../src/site/projects.ts';
 
 const siteRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(siteRoot, 'public', 'og');
@@ -28,6 +30,12 @@ export const OG_IMAGES = [
     title: 'Sigilweaver',
     subtitle: 'Open-source readers for closed data formats, and Loom, a self-hosted visual data pipeline tool.',
   },
+  ...PROJECTS.filter((p) => !p.customPage).map((p) => ({
+    file: `${p.slug}.jpg`,
+    eyebrow: `sigilweaver.app/${p.slug}`,
+    title: p.name,
+    subtitle: p.tagline.replace(/[`[\]]/g, ''),
+  })),
 ];
 
 function escapeHtml(s) {

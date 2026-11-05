@@ -22,17 +22,35 @@ sigilweaver.app/blog/             Sigilweaver/Blog
 ## Layout
 
 ```
-src/                  Vite root; one directory per page group
-  index.html          homepage
-  docs/               docs hub
-  loom/               Loom pages, download logic and tests
-  <project>/          project landing pages
-  components/         shared header, footer and navigation config
-  styles/global.css   Tailwind entry and shared styles
+src/
+  site/projects.ts    the project catalog: every project the site lists
+  site/pages.ts       renders the homepage, docs hub and project pages
+  site/layout.ts      shared <head>, header, footer and navigation
+  site/vite-plugin.ts serves the generated pages and injects the layout
+  site/client.ts      browser behaviour (mobile menu, copy buttons)
+  styles/global.css   Tailwind entry, design tokens and components
+  loom/               hand-written Loom pages, download logic and tests
+  terms.html, privacy.html
 public/               copied as-is (fonts, icons, Open Graph images, _headers)
-scripts/              build helpers (sitemaps, llms.txt, link check, OG images)
+scripts/              sitemaps, llms.txt, link check, Open Graph images
 dist/                 build output (gitignored)
 ```
+
+The homepage, the docs hub and the project landing pages have no HTML file:
+they are rendered at build time from `src/site/projects.ts`. Hand-written
+pages put `<div id="header-root" data-nav="site|loom"></div>` and
+`<div id="footer-root"></div>` where the shared header and footer go.
+
+## Adding or updating a project
+
+1. Edit its entry in `src/site/projects.ts`. Every statement there must be
+   backed by the project's repository or its published packages; versions
+   are the latest published release.
+2. Run `bun run og` to render its Open Graph image into `public/og/`.
+3. Run `bun run test` and `bun run build`.
+
+The page, navigation, footer, docs hub entry, sitemap entry, `llms.txt`
+line and link-check allowlist all follow from the catalog.
 
 ## Commands
 
@@ -46,5 +64,5 @@ bun run deploy       # build, then wrangler deploy
 ```
 
 `bun run build` fails when a page links to a file the build does not
-produce, or to a docs path that no project deploys. The list of paths
-served by other workers is `MOUNTED_PREFIXES` in `scripts/check-links.mjs`.
+produce, or to a docs path that no project in the catalog deploys. Paths
+served by other workers are `MOUNTED_PREFIXES` in `scripts/check-links.ts`.

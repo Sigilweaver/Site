@@ -7,6 +7,16 @@ export default {
     theme: {
         extend: {
             colors: {
+                // Semantic tokens, defined as RGB channels in src/styles/global.css.
+                page: 'rgb(var(--c-page) / <alpha-value>)',
+                surface: 'rgb(var(--c-surface) / <alpha-value>)',
+                line: 'rgb(var(--c-line) / <alpha-value>)',
+                strong: 'rgb(var(--c-strong) / <alpha-value>)',
+                body: 'rgb(var(--c-body) / <alpha-value>)',
+                muted: 'rgb(var(--c-muted) / <alpha-value>)',
+                subtle: 'rgb(var(--c-subtle) / <alpha-value>)',
+                accent: 'rgb(var(--c-accent) / <alpha-value>)',
+                primary: 'rgb(var(--c-primary) / <alpha-value>)',
                 mystic: {
                     900: '#1a0b2e',
                     800: '#2d1b42',
@@ -26,6 +36,7 @@ export default {
                 },
             },
             fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
                 mystical: ['Inter', 'system-ui', 'sans-serif'],
                 mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
             },
