@@ -109,3 +109,21 @@ describe('layout injection', () => {
         expect(renderHeader('site', '/docs/')).toMatch(/href="\/docs\/" class="nav-link" aria-current="page"/);
     });
 });
+
+describe('source text', () => {
+    it('is plain ASCII in every page, script and stylesheet', async () => {
+        const { readdirSync, readFileSync, statSync } = await import('node:fs');
+        const { join } = await import('node:path');
+        const root = join(import.meta.dirname, '..');
+        const walk = (dir: string): string[] =>
+            readdirSync(dir).flatMap((name) => {
+                const p = join(dir, name);
+                if (name === 'node_modules') return [];
+                return statSync(p).isDirectory() ? walk(p) : [p];
+            });
+        const offenders = walk(root)
+            .filter((f) => /\.(html|ts|css)$/.test(f))
+            .filter((f) => NON_ASCII.test(readFileSync(f, 'utf8')));
+        expect(offenders).toEqual([]);
+    });
+});

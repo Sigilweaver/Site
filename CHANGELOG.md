@@ -82,6 +82,12 @@ All notable changes to sigilweaver.app are recorded here.
   including the header and footer; the rule now applies to page content only.
 - Heading order on the Loom downloads page.
 - The Loom page's canonical URL and `og:url` pointed at the homepage.
+- Loom contributing page: Studio is built with Tauri, not Electron; the
+  website source link pointed at a `site/` folder in the Loom repository
+  that does not exist; the org-wide GitHub Discussions link is replaced
+  by Loom's issue tracker.
+- Non-ASCII arrows, bullets and an emoji in page text; a unit test now
+  keeps every page, script and stylesheet under `src/` plain ASCII.
 
 - Project descriptions that the repositories do not support: OpenQBW's
   "validated on 13,375 invoices, $399.9M" check (removed upstream as
