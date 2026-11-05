@@ -311,3 +311,148 @@ export function renderProjectPage(slug: string): string {
         ],
     });
 }
+
+// ------------------------------------------------------------------ Loom
+
+/** Loom landing page. Every statement is taken from the Loom repository READMEs. */
+export function renderLoom(): string {
+    const p = getProject('loom');
+    const parts = [
+        {
+            name: 'Studio',
+            tech: 'React, Xyflow and Tauri',
+            text: 'The visual workflow designer: an infinite canvas where you drag tools, wire them together and preview the data at any step. Workflows are saved as JSON .swwf files you can share or keep in version control.',
+        },
+        {
+            name: 'Server',
+            tech: 'FastAPI and Polars',
+            text: 'The execution engine. It builds an optimized Polars query plan instead of processing row by row, and is stateless, so several Servers can run behind a load balancer.',
+        },
+        {
+            name: 'Hub',
+            tech: 'Optional',
+            text: 'Central workflow storage, management of servers across environments, cron-like scheduled runs and role-based access control. One docker compose command brings up Hub, Server and Postgres.',
+        },
+    ];
+    const features = [
+        ['Lazy evaluation', 'Pipelines compile to Polars query plans, so Server only loads what it needs and can work with data larger than memory.'],
+        ['No row limits', 'Loom processes what your hardware can handle; the same code runs on a laptop or a server.'],
+        ['Inspect any step', 'Click a tool to see its output without running the whole workflow. Full undo and redo.'],
+        ['No-code builders', 'Formula and Filter tools include visual builders with 50+ operations for math, text, dates, type conversion, nulls and conditions.'],
+        ['Optional AI assistant', 'Studio can build workflows from a description, write Polars expressions and explain pipelines. It is opt-in; Loom works fully without it.'],
+        ['Self-hosted', 'Your data stays on your infrastructure. The full desktop build bundles Server, so a single install runs workflows locally.'],
+    ];
+    const start = [
+        { title: 'Download', text: 'Desktop builds for each release, with checksums you can verify.', href: '/loom/downloads', cta: 'Downloads' },
+        { title: 'User guide', text: 'Concepts, the interface, expressions and your first workflow.', href: '/loom/docs/user/getting-started', cta: 'Getting started' },
+        { title: 'Deploy', text: 'Run Server and Hub on your own hardware with Docker.', href: '/loom/docs/admin/deployment', cta: 'Deployment guide' },
+        { title: 'Contribute', text: 'Development setup for Studio, Server and Hub, and the CLA.', href: '/loom/contributing', cta: 'Contributing' },
+    ];
+
+    const body = html`
+    <section class="hero">
+      <div class="wrap py-16 sm:py-24">
+        <div class="flex flex-wrap items-center gap-3">
+          <p class="eyebrow">Sigilweaver Loom</p>
+          ${badge(p)}
+        </div>
+        <h1 class="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-strong sm:text-6xl">${headline(p.headline)}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          Loom is a visual data pipeline tool built on Polars. Design workflows on a canvas, run them on
+          your laptop or your servers, and add scheduling and team access when you need them. No SaaS
+          subscription, no row limits.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="/loom/downloads" class="btn btn-primary">Download ${icon.arrowRight('icon h-4 w-4')}</a>
+          <a href="${p.docs}" class="btn btn-secondary">${icon.docs('icon h-4 w-4')} Documentation</a>
+          <a href="${p.repo}" class="btn btn-ghost"${externalAttrs(p.repo)}>${icon.github('icon h-4 w-4')} Source on GitHub</a>
+        </div>
+        <p class="mt-6 text-sm text-subtle">${escapeHtml(p.license)} &middot; ${escapeHtml(p.languages.join(', '))}</p>
+      </div>
+    </section>
+
+    <div class="wrap pb-24">
+      <section aria-labelledby="status" class="callout mt-12 max-w-4xl">
+        <h2 id="status" class="flex items-center gap-2 font-semibold text-strong">${icon.warning('icon h-5 w-5 text-accent')} Pre-release software</h2>
+        <p class="mt-2 leading-relaxed text-muted">${inline(p.status)} See the <a class="text-accent underline underline-offset-4" href="/loom/docs/roadmap">roadmap</a> for what is planned before 1.0.</p>
+      </section>
+
+      <section aria-labelledby="parts" class="mt-16">
+        <h2 id="parts" class="section-title">Three parts, use what you need</h2>
+        <p class="mt-2 max-w-2xl text-muted">Studio and Server cover single-user work on one machine. Add Hub for centralized storage, scheduling, several servers or a team.</p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          ${parts.map(
+              (part) => html`
+          <article class="card">
+            <h3 class="text-lg font-semibold text-strong">${part.name}</h3>
+            <p class="mt-1 text-xs font-medium uppercase tracking-wider text-subtle">${escapeHtml(part.tech)}</p>
+            <p class="mt-3 text-sm leading-relaxed text-muted">${escapeHtml(part.text)}</p>
+          </article>`,
+          )}
+        </div>
+      </section>
+
+      <section aria-labelledby="features" class="mt-16">
+        <h2 id="features" class="section-title">What you get</h2>
+        <ul class="mt-6 grid gap-x-10 gap-y-6 md:grid-cols-2">
+          ${features.map(
+              ([title, text]) => html`
+          <li class="check-item">${icon.check('icon mt-1 h-4 w-4 shrink-0 text-accent')}<span><strong class="font-semibold text-strong">${escapeHtml(title)}.</strong> ${escapeHtml(text)}</span></li>`,
+          )}
+        </ul>
+      </section>
+
+      <section aria-labelledby="audience" class="mt-16 grid gap-8 md:grid-cols-2">
+        <div>
+          <h2 id="audience" class="section-title">Who it is for</h2>
+          <p class="mt-4 leading-relaxed text-muted">${inline(p.audience)} It is meant to work for a data scientist prototyping on a laptop, someone automating reports at home, and a team running scheduled ETL on its own servers.</p>
+        </div>
+        <div>
+          <h2 class="section-title">License</h2>
+          <p class="mt-4 leading-relaxed text-muted">
+            Studio, Server and Hub are licensed under the GNU AGPLv3; the documentation under CC BY-SA 4.0.
+            Contributors sign a Contributor License Agreement; see the
+            <a class="text-accent underline underline-offset-4" href="/loom/docs/developer/contributing/cla">CLA page</a> for what it covers.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="start" class="mt-16">
+        <h2 id="start" class="section-title">Get started</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          ${start.map(
+              (s) => html`
+          <article class="card card-link flex flex-col">
+            <h3 class="font-semibold text-strong"><a class="card-title-link" href="${s.href}">${escapeHtml(s.title)}</a></h3>
+            <p class="mt-2 flex-1 text-sm text-muted">${escapeHtml(s.text)}</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent" aria-hidden="true">${escapeHtml(s.cta)} ${icon.arrowRight('icon h-4 w-4')}</span>
+          </article>`,
+          )}
+        </div>
+      </section>
+    </div>`;
+
+    return renderDocument({
+        title: 'Sigilweaver Loom: self-hosted visual data pipelines on Polars',
+        description:
+            'Loom is a free, open-source visual data pipeline tool built on Polars. Design workflows in Studio, run them on Server, and add Hub for scheduling and teams. Self-hosted, AGPLv3.',
+        path: '/loom/',
+        nav: 'loom',
+        ogImage: '/og/loom.jpg',
+        body,
+        jsonLd: [
+            {
+                '@context': 'https://schema.org',
+                '@type': 'SoftwareApplication',
+                name: 'Sigilweaver Loom',
+                applicationCategory: 'DeveloperApplication',
+                operatingSystem: 'Windows, macOS, Linux',
+                description: plain(p.tagline),
+                url: `${SITE_URL}/loom/`,
+                license: LICENSE_URLS[p.license],
+                offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+                author: ORGANIZATION_LD,
+            },
+        ],
+    });
+}

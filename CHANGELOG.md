@@ -36,6 +36,12 @@ All notable changes to sigilweaver.app are recorded here.
 
 ### Changed
 
+- The Loom page is rewritten from the Loom repository READMEs: what
+  Studio, Server and Hub are, the features the READMEs list, who it is for,
+  licensing, and links to downloads and the user, deployment and
+  contributor docs. It is now generated with the other pages and has its own
+  Open Graph image and `SoftwareApplication` JSON-LD.
+
 - The header and footer are rendered into the HTML at build time instead of
   being injected by JavaScript, so navigation works without JavaScript and
   is visible to crawlers. The header is sticky, marks the current section,
@@ -56,6 +62,13 @@ All notable changes to sigilweaver.app are recorded here.
 
 ### Removed
 
+- Claims on the Loom page that the Loom repository does not support:
+  Electron, a "Python orchestrator", exporting workflows as standalone code,
+  "compliance ready", Git integration, a "semi-permissive" license, the
+  `Python 3.10+` requirement and FAQ structured data. Also the link to a
+  frontend demo that the Loom repository does not reference.
+- Unused Loom styles (demo nodes, use-case cards, Prism overrides).
+
 - The OpenYXDB docs stub page at `/openyxdb/docs`; the OpenYXDB Docusaurus
   site at `/openyxdb/docs/` replaces it.
 - Unused `prismjs` dependency, and `robots.txt` files under `/loom/` and
@@ -68,6 +81,7 @@ All notable changes to sigilweaver.app are recorded here.
 - On phones, Loom pages added 12px padding to every link and button,
   including the header and footer; the rule now applies to page content only.
 - Heading order on the Loom downloads page.
+- The Loom page's canonical URL and `og:url` pointed at the homepage.
 
 - Project descriptions that the repositories do not support: OpenQBW's
   "validated on 13,375 invoices, $399.9M" check (removed upstream as

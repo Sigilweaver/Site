@@ -5,12 +5,11 @@ import { generatedPages, pageFile, sitePages } from './src/site/vite-plugin.ts';
 const projectRoot = import.meta.dirname;
 const srcRoot = resolve(projectRoot, 'src');
 
-// Hand-written pages. The homepage, docs hub and project pages are
+// Hand-written pages. The homepage, docs hub, Loom page and project pages are
 // generated from src/site/projects.ts by the sitePages plugin.
 const handWritten: Record<string, string> = {
   terms: 'terms.html',
   privacy: 'privacy.html',
-  'loom/index': 'loom/index.html',
   'loom/downloads': 'loom/downloads.html',
   'loom/contributing': 'loom/contributing.html',
   'loom/verify-downloads': 'loom/verify-downloads.html',

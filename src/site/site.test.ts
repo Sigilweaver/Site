@@ -61,7 +61,7 @@ describe('generated pages', () => {
 
     it('generates the homepage, docs hub and one page per project', () => {
         expect(pages.map((p) => p.path)).toEqual(
-            expect.arrayContaining(['/', '/docs/', ...PROJECTS.filter((p) => !p.customPage).map((p) => `/${p.slug}/`)]),
+            expect.arrayContaining(['/', '/docs/', '/loom/', ...PROJECTS.filter((p) => !p.customPage).map((p) => `/${p.slug}/`)]),
         );
     });
 

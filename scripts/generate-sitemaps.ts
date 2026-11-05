@@ -30,7 +30,7 @@ const CATALOG_SOURCES = ['src/site/projects.ts', 'src/site/pages.ts', 'src/site/
 const pages: Page[] = [
     { loc: '/', files: CATALOG_SOURCES, changefreq: 'weekly', priority: '1.0' },
     { loc: '/docs/', files: CATALOG_SOURCES, changefreq: 'weekly', priority: '0.9' },
-    { loc: '/loom/', files: ['src/loom/index.html'], changefreq: 'weekly', priority: '0.9' },
+    { loc: '/loom/', files: CATALOG_SOURCES, changefreq: 'weekly', priority: '0.9' },
     { loc: '/loom/downloads', files: ['src/loom/downloads.html'], changefreq: 'weekly', priority: '0.8' },
     { loc: '/loom/contributing', files: ['src/loom/contributing.html'], changefreq: 'monthly', priority: '0.5' },
     { loc: '/loom/verify-downloads', files: ['src/loom/verify-downloads.html'], changefreq: 'monthly', priority: '0.4' },
