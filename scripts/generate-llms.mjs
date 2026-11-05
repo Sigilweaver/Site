@@ -1,20 +1,20 @@
 /**
  * generate-llms.mjs
  *
- * Generates public/llms.txt at build time.
- * Do not commit public/llms.txt - it is produced by `bun run build`.
+ * Generates dist/llms.txt after `vite build`.
  *
  * Format follows the llmstxt.org spec: a Markdown file at the domain root
  * that describes the site and provides direct links to documentation for
  * AI assistants and LLM-powered tools.
  */
 
-import { writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { existsSync, writeFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const publicDir = join(__dirname, '../public');
+// Written into the build output after `vite build`; nothing is committed.
+const outDir = join(__dirname, '../dist');
 
 const content = `\
 # Sigilweaver
@@ -59,5 +59,8 @@ Sigilweaver builds fast, portable implementations of proprietary and underdocume
 - [Sigilweaver Blog](https://sigilweaver.app/blog/): Engineering notes, project updates, and technical deep-dives.
 `;
 
-writeFileSync(join(publicDir, 'llms.txt'), content, 'utf8');
-console.log('Generated public/llms.txt');
+if (!existsSync(outDir)) {
+  throw new Error('dist/ does not exist; run `vite build` before generating llms.txt');
+}
+writeFileSync(join(outDir, 'llms.txt'), content, 'utf8');
+console.log('Generated dist/llms.txt');
