@@ -12,7 +12,7 @@
 
 import { resolve } from 'node:path';
 import type { Plugin } from 'vite';
-import { GENERATED_PROJECT_SLUGS, isNavName, renderFooter, renderHeader } from './layout.ts';
+import { GENERATED_PROJECT_SLUGS, THEME_SCRIPT, isNavName, renderFooter, renderHeader } from './layout.ts';
 import { renderDocsHub, renderHome, renderProjectPage } from './pages.ts';
 
 export interface GeneratedPage {
@@ -49,7 +49,8 @@ const HEADER_RE = /<div id="header-root"(?:\s+data-nav="([^"]*)")?\s*><\/div>/;
 const FOOTER_RE = /<div id="footer-root"\s*><\/div>/;
 
 export function injectLayout(html: string, htmlPath: string): string {
-    return html
+    const withTheme = html.includes(THEME_SCRIPT) ? html : html.replace(/<head>/i, (m) => `${m}\n    ${THEME_SCRIPT}`);
+    return withTheme
         .replace(HEADER_RE, (_match, nav: string | undefined) => {
             const name = nav ?? 'site';
             if (!isNavName(name)) {

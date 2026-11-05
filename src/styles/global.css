@@ -27,6 +27,86 @@
     --c-primary: 124 58 237;
     --c-on-primary: 255 255 255;
     --shadow-card: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 10px 30px -18px rgb(0 0 0 / 0.6);
+
+    /* Legacy palette for the hand-written pages */
+    --mystic-900: 26 11 46;
+    --mystic-800: 45 27 66;
+    --mystic-700: 76 42 107;
+    --mystic-600: 107 63 160;
+    --mystic-500: 139 92 246;
+    --mystic-400: 167 139 250;
+    --mystic-300: 196 181 253;
+    --mystic-200: 221 214 254;
+    --mystic-100: 243 240 255;
+    --gold-500: 245 158 11;
+    --gold-400: 251 191 36;
+    --gold-300: 252 211 77;
+    --gold-200: 254 243 199;
+}
+
+/*
+ * Light theme. Applied when the visitor picks it, or when the system prefers
+ * light and the visitor has not picked dark. The inline script in <head>
+ * sets data-theme before first paint.
+ */
+:root[data-theme='light'] {
+    color-scheme: light;
+    --c-page: 250 248 255;
+    --c-surface: 255 255 255;
+    --c-line: 221 212 240;
+    --c-strong: 24 12 42;
+    --c-body: 52 38 78;
+    --c-muted: 84 70 112;
+    --c-subtle: 102 88 130;
+    --c-accent: 161 74 7;
+    --c-primary: 109 40 217;
+    --c-on-primary: 255 255 255;
+    --shadow-card: 0 1px 2px rgb(40 20 80 / 0.06), 0 10px 30px -20px rgb(40 20 80 / 0.25);
+
+    --mystic-900: 250 248 255;
+    --mystic-800: 243 239 252;
+    --mystic-700: 226 217 243;
+    --mystic-600: 109 40 217;
+    --mystic-500: 124 58 237;
+    --mystic-400: 84 70 112;
+    --mystic-300: 66 52 94;
+    --mystic-200: 36 18 61;
+    --mystic-100: 26 11 46;
+    --gold-500: 161 74 7;
+    --gold-400: 161 74 7;
+    --gold-300: 146 64 14;
+    --gold-200: 120 53 15;
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme='dark']) {
+        color-scheme: light;
+        --c-page: 250 248 255;
+        --c-surface: 255 255 255;
+        --c-line: 221 212 240;
+        --c-strong: 24 12 42;
+        --c-body: 52 38 78;
+        --c-muted: 84 70 112;
+        --c-subtle: 102 88 130;
+        --c-accent: 161 74 7;
+        --c-primary: 109 40 217;
+        --c-on-primary: 255 255 255;
+        --shadow-card: 0 1px 2px rgb(40 20 80 / 0.06), 0 10px 30px -20px rgb(40 20 80 / 0.25);
+    
+        --mystic-900: 250 248 255;
+        --mystic-800: 243 239 252;
+        --mystic-700: 226 217 243;
+        --mystic-600: 109 40 217;
+        --mystic-500: 124 58 237;
+        --mystic-400: 84 70 112;
+        --mystic-300: 66 52 94;
+        --mystic-200: 36 18 61;
+        --mystic-100: 26 11 46;
+        --gold-500: 161 74 7;
+        --gold-400: 161 74 7;
+        --gold-300: 146 64 14;
+        --gold-200: 120 53 15;
+    }
 }
 
 html {
@@ -91,7 +171,7 @@ code {
     .skip-link {
         @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:px-4 focus:py-2 focus:font-semibold;
         background: rgb(var(--c-accent));
-        color: rgb(22 10 38);
+        color: rgb(var(--c-page));
     }
 
     /* Header */
@@ -104,7 +184,7 @@ code {
     }
 
     .site-header.is-scrolled {
-        box-shadow: 0 8px 24px -16px rgb(0 0 0 / 0.5);
+        box-shadow: 0 8px 24px -16px rgb(0 0 0 / 0.35);
     }
 
     .brand {
@@ -131,6 +211,16 @@ code {
     .icon-button:hover {
         color: rgb(var(--c-strong));
         background: rgb(var(--c-surface) / 0.7);
+    }
+
+    /* Theme toggle shows the theme it switches to: a sun in dark mode, a moon in light mode. */
+    .theme-toggle .theme-icon-dark,
+    :root[data-theme='light'] .theme-toggle .theme-icon-light {
+        display: none;
+    }
+
+    :root[data-theme='light'] .theme-toggle .theme-icon-dark {
+        display: block;
     }
 
     [data-menu-toggle] .menu-close-icon,

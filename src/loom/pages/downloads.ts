@@ -104,7 +104,7 @@ async function fetchDownloadsPage(): Promise<void> {
     grid.innerHTML = `
       <div class="col-span-full text-center py-12 bg-mystic-800/50 rounded-xl border border-red-500/30">
         <p class="text-red-400 mb-2">Failed to load download information.</p>
-        <button id="retry-downloads-btn" class="text-sm bg-mystic-700 hover:bg-mystic-600 text-white px-4 py-2 rounded-lg transition-colors mb-4 inline-flex items-center space-x-2">
+        <button id="retry-downloads-btn" class="text-sm bg-mystic-600 hover:bg-mystic-500 text-white px-4 py-2 rounded-lg transition-colors mb-4 inline-flex items-center space-x-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
           <span>Retry</span>
         </button>
@@ -138,7 +138,7 @@ function renderOtherSection(container: HTMLElement, webVariants?: DownloadAsset[
           <h3 class="text-xl font-bold text-mystic-200">Server</h3>
           <div class="text-xs text-mystic-400 font-mono mt-1 flex items-center gap-2">
             <span>Universal</span>
-            <span class="w-1 h-1 rounded-full bg-mystic-600"></span>
+            <span class="w-1 h-1 rounded-full bg-mystic-600 text-white"></span>
             <span>Guide</span>
           </div>
         </div>
@@ -177,9 +177,9 @@ function renderOtherSection(container: HTMLElement, webVariants?: DownloadAsset[
             <h3 class="text-xl font-bold text-mystic-200">${meta.name}</h3>
             <div class="text-xs text-mystic-400 font-mono mt-1 flex items-center gap-2">
               <span>${item.arch}</span>
-              <span class="w-1 h-1 rounded-full bg-mystic-600"></span>
+              <span class="w-1 h-1 rounded-full bg-mystic-600 text-white"></span>
               <span>${item.kind}</span>
-              <span class="w-1 h-1 rounded-full bg-mystic-600"></span>
+              <span class="w-1 h-1 rounded-full bg-mystic-600 text-white"></span>
               <span>${sizeMB} MB</span>
             </div>
           </div>
@@ -242,9 +242,9 @@ function renderSection(container: HTMLElement, title: string, description: strin
           <h3 class="text-xl font-bold text-mystic-200">${meta.name}</h3>
           <div class="text-xs text-mystic-400 font-mono mt-1 flex items-center gap-2">
             <span>${item.arch}</span>
-            <span class="w-1 h-1 rounded-full bg-mystic-600"></span>
+            <span class="w-1 h-1 rounded-full bg-mystic-600 text-white"></span>
             <span>${item.kind}</span>
-            <span class="w-1 h-1 rounded-full bg-mystic-600"></span>
+            <span class="w-1 h-1 rounded-full bg-mystic-600 text-white"></span>
             <span>${sizeMB} MB</span>
           </div>
         </div>
@@ -604,7 +604,7 @@ function renderReleaseVariant(title: string, assets: DownloadAsset[]): string {
           </div>
         </div>
 
-        <a href="${asset.url}" download="${asset.fileName}" class="block text-center bg-mystic-700 hover:bg-mystic-600 text-white px-3 py-2 rounded text-sm transition-colors mb-3 font-medium">
+        <a href="${asset.url}" download="${asset.fileName}" class="block text-center bg-mystic-600 hover:bg-mystic-500 text-white px-3 py-2 rounded text-sm transition-colors mb-3 font-medium">
           Download
         </a>
 

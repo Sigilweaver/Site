@@ -17,23 +17,14 @@ export default {
                 subtle: 'rgb(var(--c-subtle) / <alpha-value>)',
                 accent: 'rgb(var(--c-accent) / <alpha-value>)',
                 primary: 'rgb(var(--c-primary) / <alpha-value>)',
-                mystic: {
-                    900: '#1a0b2e',
-                    800: '#2d1b42',
-                    700: '#4c2a6b',
-                    600: '#6b3fa0',
-                    500: '#8b5cf6',
-                    400: '#a78bfa',
-                    300: '#c4b5fd',
-                    200: '#ddd6fe',
-                    100: '#f3f0ff',
-                },
-                gold: {
-                    500: '#f59e0b',
-                    400: '#fbbf24',
-                    300: '#fcd34d',
-                    200: '#fef3c7',
-                },
+                // Legacy palette used by the hand-written pages. Values are CSS
+                // variables so they follow the light/dark theme.
+                mystic: Object.fromEntries(
+                    [900, 800, 700, 600, 500, 400, 300, 200, 100].map((n) => [n, `rgb(var(--mystic-${n}) / <alpha-value>)`]),
+                ),
+                gold: Object.fromEntries(
+                    [500, 400, 300, 200].map((n) => [n, `rgb(var(--gold-${n}) / <alpha-value>)`]),
+                ),
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -51,8 +42,8 @@ export default {
                     '50%': { transform: 'translateY(-20px)' },
                 },
                 glow: {
-                    from: { boxShadow: '0 0 5px rgba(139, 92, 246, 0.5)' },
-                    to: { boxShadow: '0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6)' },
+                    from: { boxShadow: '0 0 5px rgb(var(--mystic-500) / 0.5)' },
+                    to: { boxShadow: '0 0 20px rgb(var(--mystic-500) / 0.8), 0 0 30px rgb(var(--mystic-500) / 0.6)' },
                 },
                 dataFlow: {
                     '0%': { transform: 'translateX(-100%)', opacity: '0' },

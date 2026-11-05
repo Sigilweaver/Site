@@ -28,30 +28,30 @@ body {
    =================================== */
 
 .use-case-card {
-  background: rgba(76, 42, 107, 0.3);
+  background: rgb(var(--mystic-700) / 0.3);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(107, 63, 160, 0.5);
+  border: 1px solid rgb(var(--mystic-600) / 0.5);
   border-radius: 12px;
   padding: 2rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .use-case-card:hover {
-  border-color: rgba(245, 158, 11, 0.5);
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1);
+  border-color: rgb(var(--gold-500) / 0.5);
+  box-shadow: 0 4px 20px rgb(var(--gold-500) / 0.1);
 }
 
 .tech-item {
   padding: 1rem;
   border-radius: 8px;
-  background: rgba(26, 11, 46, 0.5);
-  border: 1px solid rgba(76, 42, 107, 0.3);
+  background: rgb(var(--mystic-900) / 0.5);
+  border: 1px solid rgb(var(--mystic-700) / 0.3);
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .tech-item:hover {
-  border-color: rgba(245, 158, 11, 0.5);
-  background: rgba(26, 11, 46, 0.7);
+  border-color: rgb(var(--gold-500) / 0.5);
+  background: rgb(var(--mystic-900) / 0.7);
 }
 
 /* ===================================
@@ -63,8 +63,8 @@ button {
   cursor: pointer;
 }
 
-a:focus,
-button:focus {
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid theme('colors.gold.500');
   outline-offset: 2px;
   border-radius: 4px;
@@ -75,8 +75,8 @@ button:focus {
    =================================== */
 
 pre[class*="language-"] {
-  background: rgba(26, 11, 46, 0.8) !important;
-  border: 1px solid rgba(76, 42, 107, 0.5);
+  background: rgb(var(--mystic-900) / 0.8) !important;
+  border: 1px solid rgb(var(--mystic-700) / 0.5);
   border-radius: 8px;
 }
 
@@ -127,8 +127,9 @@ section {
    System Preference: High Contrast
    =================================== */
 
+/* Scoped to the dark theme: these colours assume a dark page. */
 @media (prefers-contrast: more) {
-  :root {
+  :root:not([data-theme='light']) {
     --a11y-bg: #0d0d12;
     --a11y-bg-elevated: #1a1a24;
     --a11y-bg-card: #1a1a24;
@@ -141,34 +142,34 @@ section {
     --a11y-link: #80b0ff;
   }
 
-  body {
+  :root:not([data-theme='light']) body {
     background: var(--a11y-bg) !important;
     color: var(--a11y-text) !important;
   }
 
-  .nav-bar,
-  .mobile-menu {
+  :root:not([data-theme='light']) .site-header,
+  :root:not([data-theme='light']) .mobile-menu {
     background: var(--a11y-bg-elevated) !important;
     border-color: var(--a11y-border) !important;
     backdrop-filter: none !important;
   }
 
-  .use-case-card,
-  .tech-item {
+  :root:not([data-theme='light']) .use-case-card,
+  :root:not([data-theme='light']) .tech-item {
     background: var(--a11y-bg-card) !important;
     border: 2px solid var(--a11y-border) !important;
     backdrop-filter: none !important;
   }
 
-  a:not(.cta-button):not(.nav-link) {
+  :root:not([data-theme='light']) main a:not(.btn) {
     color: var(--a11y-link) !important;
   }
 
-  a:not(.cta-button):not(.nav-link):hover {
+  main a:not(.btn):hover {
     text-decoration: underline !important;
   }
 
-  *:focus {
+  *:focus-visible {
     outline: 3px solid var(--a11y-accent) !important;
     outline-offset: 2px !important;
   }
@@ -187,15 +188,11 @@ section {
     padding: 0.75rem;
   }
 
-  a,
-  button {
+  main a,
+  main button {
     min-height: 44px;
     min-width: 44px;
     padding: 12px;
-  }
-
-  .mobile-link {
-    padding: 16px 12px;
   }
 }
 
@@ -237,8 +234,8 @@ section {
   position: absolute;
   width: 80px;
   height: 60px;
-  background: rgba(76, 42, 107, 0.8);
-  border: 2px solid rgba(139, 92, 246, 0.6);
+  background: rgb(var(--mystic-700) / 0.8);
+  border: 2px solid rgb(var(--mystic-500) / 0.6);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -249,7 +246,7 @@ section {
 }
 
 .demo-node:hover {
-  border-color: rgba(245, 158, 11, 0.8);
+  border-color: rgb(var(--gold-500) / 0.8);
 }
 
 .demo-node-source {
@@ -257,7 +254,7 @@ section {
 }
 
 .demo-node-process {
-  border-color: rgba(139, 92, 246, 0.6);
+  border-color: rgb(var(--mystic-500) / 0.6);
 }
 
 .demo-node-sink {
@@ -266,7 +263,7 @@ section {
 
 .node-content {
   text-align: center;
-  color: white;
+  color: rgb(var(--mystic-100));
 }
 
 .node-icon {
@@ -313,24 +310,6 @@ section {
 }
 
 /* ===================================
-   Mobile Menu
-   =================================== */
-
-.mobile-menu {
-  @apply transition-opacity duration-200 ease-in-out opacity-0 -translate-y-4 pointer-events-none;
-}
-
-.mobile-menu.active {
-  @apply opacity-100 translate-y-0 pointer-events-auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mobile-menu {
-    @apply transition-none;
-  }
-}
-
-/* ===================================
    Tooltip
    =================================== */
 
@@ -347,7 +326,8 @@ section {
    =================================== */
 
 @media print {
-  nav {
+  .site-header,
+  .site-footer {
     display: none !important;
   }
 
