@@ -48,7 +48,7 @@ export const loomNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/loom/docs' },
+        { label: 'Docs', href: '/loom/docs/' },
         { label: 'Contributing', href: '/loom/contributing.html' },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/Loom', isExternal: true },
     ],
@@ -81,7 +81,7 @@ export const openyxdbNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/openyxdb/docs' },
+        { label: 'Docs', href: '/openyxdb/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/openyxdb/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenYXDB', isExternal: true },
     ],
@@ -97,7 +97,7 @@ export const opentfrawNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/opentfraw/docs' },
+        { label: 'Docs', href: '/opentfraw/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/opentfraw/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenTFRaw', isExternal: true },
     ],
@@ -113,7 +113,7 @@ export const opentimstdfNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/opentimstdf/docs' },
+        { label: 'Docs', href: '/opentimstdf/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/opentimstdf/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenTimsTDF', isExternal: true },
     ],
@@ -129,7 +129,7 @@ export const openwrawNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/openwraw/docs' },
+        { label: 'Docs', href: '/openwraw/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/openwraw/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenWRaw', isExternal: true },
     ],
@@ -145,7 +145,7 @@ export const openarawNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/openaraw/docs' },
+        { label: 'Docs', href: '/openaraw/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/openaraw/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenARaw', isExternal: true },
     ],
@@ -161,7 +161,7 @@ export const opensxrawNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/opensxraw/docs' },
+        { label: 'Docs', href: '/opensxraw/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/opensxraw/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenSXRaw', isExternal: true },
     ],
@@ -177,7 +177,7 @@ export const openmassspecNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/openmassspec/docs' },
+        { label: 'Docs', href: '/openmassspec/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/openmassspec/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenMassSpec', isExternal: true },
     ],
@@ -193,7 +193,7 @@ export const speclanceNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/speclance/docs' },
+        { label: 'Docs', href: '/speclance/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/speclance/', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/SpecLance', isExternal: true },
     ],
@@ -209,7 +209,7 @@ export const opensqlanywhereNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/opensqlanywhere/docs' },
+        { label: 'Docs', href: '/opensqlanywhere/docs/' },
         { label: 'crates.io', href: 'https://crates.io/crates/opensqlany', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenSQLAnywhere', isExternal: true },
     ],
@@ -225,7 +225,7 @@ export const openqbwNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/openqbw/docs' },
+        { label: 'Docs', href: '/openqbw/docs/' },
         { label: 'PyPI', href: 'https://pypi.org/project/openqbw/', isExternal: true },
         { label: 'crates.io', href: 'https://crates.io/crates/openqbw', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/OpenQBW', isExternal: true },
@@ -290,7 +290,7 @@ export const genolanceNavConfig: NavConfig = {
         href: '/',
     },
     links: [
-        { label: 'Docs', href: '/genolance/docs/' },
+        { label: 'README', href: 'https://github.com/Sigilweaver/GenoLance#readme', isExternal: true },
         { label: 'GitHub', href: 'https://github.com/Sigilweaver/GenoLance', isExternal: true },
     ],
 };

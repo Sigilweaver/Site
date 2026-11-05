@@ -30,7 +30,7 @@ export const defaultFooterConfig: FooterConfig = {
         {
             title: 'Resources',
             links: [
-                { label: 'Loom Docs', href: '/loom/docs' },
+                { label: 'Loom Docs', href: '/loom/docs/' },
                 { label: 'Loom Downloads', href: '/loom/downloads' },
                 { label: 'GitHub', href: 'https://github.com/Sigilweaver', isExternal: true },
             ],

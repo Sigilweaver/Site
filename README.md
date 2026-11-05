@@ -1,47 +1,50 @@
 # sigilweaver.app
 
-All marketing sites for Sigilweaver projects live here and are served from a
-single Cloudflare Worker at `sigilweaver.app/*`. Project **documentation**
-(Docusaurus, etc.) stays bundled with each project repo and is deployed by a
-more-specific worker route that takes precedence over this one.
+The Sigilweaver website: the homepage, the docs hub, the Loom pages and one
+landing page per project. It is a multi-page Vite build (TypeScript and
+Tailwind CSS, no framework) served by a single Cloudflare Worker at
+`sigilweaver.app/*`.
+
+Each project's documentation (Docusaurus) and the blog live in their own
+repositories and are deployed by more specific worker routes, which take
+precedence over this one:
 
 ```
-sigilweaver.app/           ← Site/homepage      (this repo)
-sigilweaver.app/loom/      ← Site/loom          (this repo)
-sigilweaver.app/loom/docs  ← Sigilweaver/Loom   (Loom/docs, Docusaurus)
-sigilweaver.app/openyxdb/  ← Site/openyxdb      (this repo)
-sigilweaver.app/cms/       ← (not yet)
-sigilweaver.app/keep/      ← (not yet)
+sigilweaver.app/                  this repo (homepage)
+sigilweaver.app/docs/             this repo (docs hub)
+sigilweaver.app/loom/             this repo (Loom pages)
+sigilweaver.app/loom/docs/        Sigilweaver/Loom, docs/
+sigilweaver.app/<project>/        this repo (project landing page)
+sigilweaver.app/<project>/docs/   Sigilweaver/<Project>, docs/
+sigilweaver.app/blog/             Sigilweaver/Blog
 ```
 
 ## Layout
 
 ```
-Site/
-├── homepage/      # hub landing page        → dist/
-├── loom/          # Loom marketing site     → dist/loom/
-├── openyxdb/      # OpenYXDB marketing site → dist/openyxdb/
-├── dist/          # merged build output (gitignored)
-└── wrangler.jsonc # single worker, route sigilweaver.app/*
+src/                  Vite root; one directory per page group
+  index.html          homepage
+  docs/               docs hub
+  loom/               Loom pages, download logic and tests
+  <project>/          project landing pages
+  components/         shared header, footer and navigation config
+  styles/global.css   Tailwind entry and shared styles
+public/               copied as-is (fonts, icons, Open Graph images, _headers)
+scripts/              build helpers (sitemaps, llms.txt, link check, OG images)
+dist/                 build output (gitignored)
 ```
 
-Each sub-site is an independent Vite project. The top-level `build` script
-runs them in order, each writing to its own subpath inside the shared
-`dist/`. The Cloudflare Worker serves `dist/` at the apex, and the per-site
-`base: '/<project>/'` values line up asset URLs correctly.
-
-## Dev
+## Commands
 
 ```sh
-bun install                 # installs all three workspaces
-bun run build               # builds all → dist/
-bun run --cwd homepage dev  # or any individual sub-site
-bun run deploy              # build + wrangler deploy
+bun install
+bun run dev          # dev server on http://localhost:25807
+bun run test         # unit tests (vitest)
+bun run build        # type-check, build, sitemaps, llms.txt, link check
+bun run og           # re-render Open Graph images (needs playwright)
+bun run deploy       # build, then wrangler deploy
 ```
 
-## Why one repo
-
-- Shared theming can consolidate into a future `packages/theme/` without
-  coordinating across repos.
-- One deploy pipeline, one wrangler route at the apex.
-- Project repos stay focused on code + docs, not on marketing copy.
+`bun run build` fails when a page links to a file the build does not
+produce, or to a docs path that no project deploys. The list of paths
+served by other workers is `MOUNTED_PREFIXES` in `scripts/check-links.mjs`.

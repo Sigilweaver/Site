@@ -1,28 +1,38 @@
 #!/usr/bin/env node
 
-import { mkdirSync, statSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const siteRoot = join(__dirname, '..');
-const publicDir = join(siteRoot, 'public');
+// Written into the build output after `vite build`; nothing is committed.
+const outDir = join(siteRoot, 'dist');
 
 const domain = 'https://sigilweaver.app';
 
 // ------------------------------------------------------------------ helpers
 
-function toDateString(d) {
-  return d.toISOString().slice(0, 10);
-}
-
+/**
+ * Date of the last commit that touched `file`, as YYYY-MM-DD.
+ * Returns null (and the <lastmod> element is omitted) when the page has no
+ * source file in this repo or git history is unavailable, because a file
+ * mtime in a fresh checkout is the clone time, not the edit time.
+ */
 function getLastMod(file) {
-  if (!file) return toDateString(new Date());
+  if (!file) return null;
   try {
-    return toDateString(statSync(join(siteRoot, file)).mtime);
-  } catch {
-    return toDateString(new Date());
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], {
+      cwd: siteRoot,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+    }).trim();
+    return out || null;
+  } catch (err) {
+    console.warn(`sitemap: no git date for ${file} (${err.message.split('\n')[0]}); omitting lastmod`);
+    return null;
   }
 }
 
@@ -31,7 +41,7 @@ function renderUrlset(pages) {
     .map((p) => {
       const lines = [
         `    <loc>${domain}${p.loc}</loc>`,
-        `    <lastmod>${p.lastmod}</lastmod>`,
+        ...(p.lastmod ? [`    <lastmod>${p.lastmod}</lastmod>`] : []),
         `    <changefreq>${p.changefreq}</changefreq>`,
         `    <priority>${p.priority}</priority>`,
       ];
@@ -104,42 +114,36 @@ const projectStubs = [
     dir: 'opentfraw',
     pages: [
       { loc: '/opentfraw/', file: 'src/opentfraw/index.html', changefreq: 'monthly', priority: '0.8' },
-      { loc: '/opentfraw/docs', file: null, changefreq: 'weekly', priority: '0.7' },
     ],
   },
   {
     dir: 'opentimstdf',
     pages: [
       { loc: '/opentimstdf/', file: 'src/opentimstdf/index.html', changefreq: 'monthly', priority: '0.8' },
-      { loc: '/opentimstdf/docs', file: null, changefreq: 'weekly', priority: '0.7' },
     ],
   },
   {
     dir: 'openwraw',
     pages: [
       { loc: '/openwraw/', file: 'src/openwraw/index.html', changefreq: 'monthly', priority: '0.8' },
-      { loc: '/openwraw/docs', file: null, changefreq: 'weekly', priority: '0.7' },
     ],
   },
   {
     dir: 'openaraw',
     pages: [
       { loc: '/openaraw/', file: 'src/openaraw/index.html', changefreq: 'monthly', priority: '0.8' },
-      { loc: '/openaraw/docs', file: null, changefreq: 'weekly', priority: '0.7' },
     ],
   },
   {
     dir: 'opensxraw',
     pages: [
       { loc: '/opensxraw/', file: 'src/opensxraw/index.html', changefreq: 'monthly', priority: '0.8' },
-      { loc: '/opensxraw/docs', file: null, changefreq: 'weekly', priority: '0.7' },
     ],
   },
   {
     dir: 'openyxdb',
     pages: [
       { loc: '/openyxdb/', file: 'src/openyxdb/index.html', changefreq: 'monthly', priority: '0.8' },
-      { loc: '/openyxdb/docs', file: 'src/openyxdb/docs.html', changefreq: 'weekly', priority: '0.7' },
     ],
   },
   {
@@ -172,13 +176,16 @@ const projectStubs = [
 // script. Listed in the main index so Google crawls every doc page.
 const docusaurusSitemaps = [
   '/blog/sitemap.xml',
-  '/genolance/docs/sitemap.xml',
   '/dicom-atlas/docs/sitemap.xml',
   '/loom/docs/sitemap.xml',
+  '/openaraw/docs/sitemap.xml',
   '/openkspace/docs/sitemap.xml',
   '/openmassspec/docs/sitemap.xml',
   '/openqbw/docs/sitemap.xml',
+  '/openqvd/docs/sitemap.xml',
   '/opensqlanywhere/docs/sitemap.xml',
+  '/opensxraw/docs/sitemap.xml',
+  '/openszraw/docs/sitemap.xml',
   '/opentfraw/docs/sitemap.xml',
   '/opentimstdf/docs/sitemap.xml',
   '/openwraw/docs/sitemap.xml',
@@ -190,32 +197,34 @@ const docusaurusSitemaps = [
 // ------------------------------------------------------------------ main
 
 function main() {
-  mkdirSync(publicDir, { recursive: true });
+  if (!existsSync(outDir)) {
+    throw new Error('dist/ does not exist; run `vite build` before generating sitemaps');
+  }
 
   // sitemap-core.xml - main Website pages
   const coreEntries = corePages.map((p) => ({ ...p, lastmod: getLastMod(p.file) }));
-  writeFileSync(join(publicDir, 'sitemap-core.xml'), renderUrlset(coreEntries), 'utf8');
-  console.log('Generated public/sitemap-core.xml');
+  writeFileSync(join(outDir, 'sitemap-core.xml'), renderUrlset(coreEntries), 'utf8');
+  console.log('Generated dist/sitemap-core.xml');
 
   // loom/sitemap-core.xml and loom/sitemap.xml (Loom sub-index for standalone use)
-  const loomPublicDir = join(publicDir, 'loom');
-  mkdirSync(loomPublicDir, { recursive: true });
+  const loomOutDir = join(outDir, 'loom');
+  mkdirSync(loomOutDir, { recursive: true });
   const loomEntries = loomPages.map((p) => ({ ...p, lastmod: getLastMod(p.file) }));
-  writeFileSync(join(loomPublicDir, 'sitemap-core.xml'), renderUrlset(loomEntries), 'utf8');
+  writeFileSync(join(loomOutDir, 'sitemap-core.xml'), renderUrlset(loomEntries), 'utf8');
   writeFileSync(
-    join(loomPublicDir, 'sitemap.xml'),
+    join(loomOutDir, 'sitemap.xml'),
     renderSitemapIndex(['/loom/sitemap-core.xml', '/loom/docs/sitemap.xml']),
     'utf8'
   );
-  console.log('Generated public/loom/sitemap-core.xml and public/loom/sitemap.xml');
+  console.log('Generated dist/loom/sitemap-core.xml and dist/loom/sitemap.xml');
 
   // Per-project stub sitemaps
   for (const project of projectStubs) {
-    const dir = join(publicDir, project.dir);
+    const dir = join(outDir, project.dir);
     mkdirSync(dir, { recursive: true });
     const entries = project.pages.map((p) => ({ ...p, lastmod: getLastMod(p.file) }));
     writeFileSync(join(dir, 'sitemap.xml'), renderUrlset(entries), 'utf8');
-    console.log(`Generated public/${project.dir}/sitemap.xml`);
+    console.log(`Generated dist/${project.dir}/sitemap.xml`);
   }
 
   // Main sitemap index - flat list of every individual urlset sitemap.
@@ -227,8 +236,8 @@ function main() {
     ...projectStubs.map((p) => `/${p.dir}/sitemap.xml`),
     ...docusaurusSitemaps,
   ];
-  writeFileSync(join(publicDir, 'sitemap.xml'), renderSitemapIndex(allSitemapLocs), 'utf8');
-  console.log('Generated public/sitemap.xml');
+  writeFileSync(join(outDir, 'sitemap.xml'), renderSitemapIndex(allSitemapLocs), 'utf8');
+  console.log('Generated dist/sitemap.xml');
 }
 
 main();

@@ -5,25 +5,24 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "sitemap": "node scripts/generate-sitemaps.mjs",
-        "llms": "node scripts/generate-llms.mjs",
-        "build": "bun run sitemap && bun run llms && tsc && vite build",
+        "typecheck": "tsc",
+        "build": "tsc && vite build && node scripts/generate-sitemaps.mjs && node scripts/generate-llms.mjs && node scripts/check-links.mjs",
+        "check-links": "node scripts/check-links.mjs",
+        "og": "node scripts/render-og.mjs",
         "preview": "vite preview",
         "test": "vitest run",
         "deploy": "bun run build && bunx wrangler deploy"
     },
     "dependencies": {
-        "lucide": "^0.556.0",
-        "prismjs": "^1.30.0"
+        "lucide": "^1.68.0"
     },
     "devDependencies": {
-        "@types/node": "^22.7.4",
-        "@types/prismjs": "^1.26.5",
-        "autoprefixer": "^10.4.20",
-        "postcss": "^8.4.47",
+        "@types/node": "^22.20.5",
+        "autoprefixer": "^10.6.2",
+        "postcss": "^8.5.32",
         "tailwindcss": "^3.4.14",
         "typescript": "^5.6.3",
-        "vite": "^5.4.11",
-        "vitest": "^4.0.18"
+        "vite": "^8.3.6",
+        "vitest": "^4.1.12"
     }
 }
