@@ -30,7 +30,7 @@ export const OG_IMAGES = [
     title: 'Sigilweaver',
     subtitle: 'Open-source readers for closed data formats, and Loom, a self-hosted visual data pipeline tool.',
   },
-  ...PROJECTS.filter((p) => !p.customPage).map((p) => ({
+  ...PROJECTS.map((p) => ({
     file: `${p.slug}.jpg`,
     eyebrow: `sigilweaver.app/${p.slug}`,
     title: p.name,

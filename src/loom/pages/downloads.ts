@@ -326,7 +326,7 @@ async function loadReleases(): Promise<void> {
 
   // Show loading state
   button.disabled = true;
-  button.innerHTML = '<span class="inline-block mr-2">⏳</span> Loading...';
+  button.innerHTML = 'Loading...';
 
   try {
     // Reuse releasesData if already fetched, otherwise fetch it
@@ -436,7 +436,7 @@ function renderPagination(current: number, total: number): string {
     return html;
   }
 
-  html += '<span class="text-mystic-600 mx-2">•</span>';
+  html += '<span class="text-mystic-600 mx-2" aria-hidden="true">&middot;</span>';
 
   // Previous button
   if (current > 1) {
@@ -600,7 +600,7 @@ function renderReleaseVariant(title: string, assets: DownloadAsset[]): string {
         <div class="flex items-start justify-between mb-3">
           <div class="flex-1">
             <div class="text-sm font-semibold text-mystic-200">${meta.name}</div>
-            <div class="text-xs text-mystic-500 mt-0.5">${asset.arch} • ${sizeMB} MB</div>
+            <div class="text-xs text-mystic-500 mt-0.5">${asset.arch} &middot; ${sizeMB} MB</div>
           </div>
         </div>
 

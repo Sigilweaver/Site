@@ -27,20 +27,6 @@ body {
    Cards & Components
    =================================== */
 
-.use-case-card {
-  background: rgb(var(--mystic-700) / 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgb(var(--mystic-600) / 0.5);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.use-case-card:hover {
-  border-color: rgb(var(--gold-500) / 0.5);
-  box-shadow: 0 4px 20px rgb(var(--gold-500) / 0.1);
-}
-
 .tech-item {
   padding: 1rem;
   border-radius: 8px;
@@ -68,36 +54,6 @@ button:focus-visible {
   outline: 2px solid theme('colors.gold.500');
   outline-offset: 2px;
   border-radius: 4px;
-}
-
-/* ===================================
-   Code Blocks (Prism.js overrides)
-   =================================== */
-
-pre[class*="language-"] {
-  background: rgb(var(--mystic-900) / 0.8) !important;
-  border: 1px solid rgb(var(--mystic-700) / 0.5);
-  border-radius: 8px;
-}
-
-code[class*="language-"] {
-  color: theme('colors.mystic.300') !important;
-}
-
-.token.keyword {
-  color: theme('colors.mystic.500') !important;
-}
-
-.token.string {
-  color: theme('colors.gold.500') !important;
-}
-
-.token.function {
-  color: theme('colors.mystic.400') !important;
-}
-
-.token.comment {
-  color: theme('colors.mystic.600') !important;
 }
 
 /* ===================================
@@ -154,7 +110,6 @@ section {
     backdrop-filter: none !important;
   }
 
-  :root:not([data-theme='light']) .use-case-card,
   :root:not([data-theme='light']) .tech-item {
     background: var(--a11y-bg-card) !important;
     border: 2px solid var(--a11y-border) !important;
@@ -180,10 +135,6 @@ section {
    =================================== */
 
 @media (max-width: 768px) {
-  .use-case-card {
-    padding: 1.5rem;
-  }
-
   .tech-item {
     padding: 0.75rem;
   }
@@ -223,89 +174,6 @@ section {
   .loading::after {
     animation: none;
     border-top-color: theme('colors.gold.500');
-  }
-}
-
-/* ===================================
-   Demo Node Styles
-   =================================== */
-
-.demo-node {
-  position: absolute;
-  width: 80px;
-  height: 60px;
-  background: rgb(var(--mystic-700) / 0.8);
-  border: 2px solid rgb(var(--mystic-500) / 0.6);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-  backdrop-filter: blur(10px);
-}
-
-.demo-node:hover {
-  border-color: rgb(var(--gold-500) / 0.8);
-}
-
-.demo-node-source {
-  border-color: rgba(34, 197, 94, 0.6);
-}
-
-.demo-node-process {
-  border-color: rgb(var(--mystic-500) / 0.6);
-}
-
-.demo-node-sink {
-  border-color: rgba(239, 68, 68, 0.6);
-}
-
-.node-content {
-  text-align: center;
-  color: rgb(var(--mystic-100));
-}
-
-.node-icon {
-  font-size: 20px;
-  margin-bottom: 2px;
-}
-
-.node-label {
-  font-size: 10px;
-  font-weight: 500;
-}
-
-.demo-connections {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.node-tooltip {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  margin-top: 5px;
-}
-
-@media (max-width: 768px) {
-  .demo-node {
-    width: 60px;
-    height: 45px;
-  }
-
-  .node-icon {
-    font-size: 16px;
-  }
-
-  .node-label {
-    font-size: 8px;
   }
 }
 

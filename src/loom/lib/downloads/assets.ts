@@ -80,7 +80,7 @@ export function getOsMeta(os: string, fileName: string): OsMeta {
     if (fileName.endsWith('.app.tar.gz')) {
       note = 'Extract and move to Applications folder.';
     } else {
-      note = 'Unsigned: Right-click → Open to bypass security check.';
+      note = 'Unsigned: Right-click, then Open, to bypass security check.';
     }
   } else if (os === 'web') {
     name = 'Web Bundle';

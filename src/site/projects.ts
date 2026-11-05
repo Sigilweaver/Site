@@ -91,7 +91,7 @@ export interface Project {
     installNote?: string;
     /** Slugs of related projects. */
     related?: string[];
-    /** Set when the project has a hand-written page instead of the generated one. */
+    /** Set when the project has its own page instead of the generic project template. */
     customPage?: boolean;
 }
 
@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
             'Optional AI assistant in Studio; the application works fully without it.',
             'Studio and Server for single-user work; add Hub for scheduling and teams.',
         ],
-        status: 'Pre-release. Loom has not had a v1.0 release yet; expect breaking changes between versions.',
+        status: 'Loom has not had a v1.0 release yet; expect breaking changes between versions.',
         badge: 'Pre-release',
         languages: ['TypeScript', 'Python'],
         license: 'AGPL-3.0-only',

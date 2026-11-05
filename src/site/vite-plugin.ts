@@ -1,11 +1,11 @@
 /**
  * Vite plugin that renders the site at build time.
  *
- * - Generated pages (homepage, docs hub, one per catalog project) have no
+ * - Generated pages (homepage, docs hub, Loom, one per catalog project) have no
  *   HTML file on disk. They are build inputs at src/<path>/index.html, and
  *   this plugin supplies their content in `load` (build) or a middleware
  *   (dev server).
- * - Hand-written pages (Loom, legal) keep their own HTML; the plugin
+ * - Hand-written pages (Loom downloads and contributing, legal) keep their own HTML; the plugin
  *   replaces their `<div id="header-root" data-nav="...">` and
  *   `<div id="footer-root">` placeholders with the shared header and footer.
  */
@@ -13,7 +13,7 @@
 import { resolve } from 'node:path';
 import type { Plugin } from 'vite';
 import { GENERATED_PROJECT_SLUGS, THEME_SCRIPT, isNavName, renderFooter, renderHeader } from './layout.ts';
-import { renderDocsHub, renderHome, renderProjectPage } from './pages.ts';
+import { renderDocsHub, renderHome, renderLoom, renderProjectPage } from './pages.ts';
 
 export interface GeneratedPage {
     /** URL path, e.g. "/openqbw/". */
@@ -27,6 +27,7 @@ export function generatedPages(): GeneratedPage[] {
     return [
         { path: '/', name: 'main', render: renderHome },
         { path: '/docs/', name: 'docs/index', render: renderDocsHub },
+        { path: '/loom/', name: 'loom/index', render: renderLoom },
         ...GENERATED_PROJECT_SLUGS.map((slug) => ({
             path: `/${slug}/`,
             name: `${slug}/index`,
