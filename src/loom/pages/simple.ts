@@ -5,13 +5,11 @@
 
 import '../../styles/global.css';
 import '@styles/main.css';
-import { initializeLayout, loomSimpleNavConfig } from '../../components';
+import { initSite } from '../../site/client';
 import { createIcons, Clipboard, Heart, BookOpen } from 'lucide';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initializeLayout({
-    header: { config: loomSimpleNavConfig },
-  });
+  initSite();
 
   createIcons({
     icons: {

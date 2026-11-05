@@ -4,7 +4,7 @@
 
 import '../../styles/global.css';
 import '@styles/main.css';
-import { initializeLayout, loomNavConfig } from '../../components';
+import { initSite } from '../../site/client';
 import { createIcons, Lock } from 'lucide';
 import {
   type DownloadAsset,
@@ -31,9 +31,7 @@ let expandedReleases = new Set<string>();
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-  initializeLayout({
-    header: { config: loomNavConfig },
-  });
+  initSite();
 
   createIcons({
     icons: { Lock }

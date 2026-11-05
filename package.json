@@ -6,8 +6,8 @@
     "scripts": {
         "dev": "vite",
         "typecheck": "tsc",
-        "build": "tsc && vite build && node scripts/generate-sitemaps.mjs && node scripts/generate-llms.mjs && node scripts/check-links.mjs",
-        "check-links": "node scripts/check-links.mjs",
+        "build": "tsc && vite build && bun scripts/generate-sitemaps.ts && bun scripts/generate-llms.ts && bun scripts/check-links.ts",
+        "check-links": "bun scripts/check-links.ts",
         "og": "node scripts/render-og.mjs",
         "preview": "vite preview",
         "test": "vitest run",

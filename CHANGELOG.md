@@ -6,6 +6,20 @@ All notable changes to sigilweaver.app are recorded here.
 
 ### Added
 
+- Project catalog (`src/site/projects.ts`), checked against each public
+  repository and the published PyPI and crates.io versions. The homepage,
+  docs hub, project pages, footer, sitemaps, `llms.txt`, Open Graph images
+  and the link-check allowlist are generated from it.
+- Landing pages for OpenSZRaw (Shimadzu) and OpenMassSpecCore.
+- Every project page states who the project is for, its latest published
+  version, license and languages, install commands with copy buttons, and a
+  "Status and known limitations" summary taken from the repository README.
+- Per-project Open Graph images, Twitter card tags, `og:image` sizes,
+  JSON-LD (`SoftwareSourceCode`, `Organization`, `WebSite`) and a web app
+  manifest.
+- Unit tests for the catalog and the generated pages (ASCII-only text,
+  one `h1`, canonical URL, repository and docs links).
+
 - CI workflow that runs the unit tests and the full build on every pull
   request and push to `main`.
 - `scripts/check-links.mjs`, run at the end of `bun run build`: fails the
@@ -16,6 +30,17 @@ All notable changes to sigilweaver.app are recorded here.
   generator, `scripts/render-og.mjs`.
 
 ### Changed
+
+- The header and footer are rendered into the HTML at build time instead of
+  being injected by JavaScript, so navigation works without JavaScript and
+  is visible to crawlers. The header is sticky, marks the current section,
+  and links the blog.
+- New visual design: semantic colour tokens, shared component styles,
+  consistent page width, and a footer listing every project.
+- Inter is loaded on every page (it was only loaded on the Loom pages) and
+  preloaded.
+- One `sitemap-core.xml` lists every page this repo builds; the
+  per-project sitemap stubs are gone.
 
 - Updated Vite to 8, Vitest to 4.1, Lucide to 1.x and the PostCSS tooling.
 - Sitemaps and `llms.txt` are generated into `dist/` after `vite build`
@@ -32,6 +57,14 @@ All notable changes to sigilweaver.app are recorded here.
   `/openyxdb/`, which crawlers ignore outside the site root.
 
 ### Fixed
+
+- Project descriptions that the repositories do not support: OpenQBW's
+  "validated on 13,375 invoices, $399.9M" check (removed upstream as
+  invalid), GenoLance BCF support (not supported), OpenTFRaw "format
+  versions 8-66" (tested on 63, 64 and 66), OpenMassSpec "three vendors"
+  (six), and `pip install speclance` / `cargo install genolance-cli`
+  (neither package is published).
+- `/fonts/inter.css` referenced an italic font file that does not exist.
 
 - `og:image` and `twitter:image` pointed at a file that did not exist.
 - The GenoLance docs link pointed at a docs site that does not exist; it now

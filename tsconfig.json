@@ -17,5 +17,5 @@
       "@lib/*": ["./src/loom/lib/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "vite.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "scripts/**/*.ts", "vite.config.ts"]
 }
