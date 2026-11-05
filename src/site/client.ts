@@ -55,7 +55,49 @@ function initCopyButtons(): void {
     });
 }
 
+type Theme = 'light' | 'dark';
+
+function storedTheme(): Theme | null {
+    try {
+        const t = localStorage.getItem('theme');
+        return t === 'light' || t === 'dark' ? t : null;
+    } catch {
+        // Storage can be blocked (private mode, cookie settings); fall back to the system theme.
+        return null;
+    }
+}
+
+function initThemeToggle(): void {
+    const root = document.documentElement;
+    const system = window.matchMedia('(prefers-color-scheme: light)');
+    const apply = (theme: Theme) => {
+        root.setAttribute('data-theme', theme);
+        document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((b) => {
+            b.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        });
+    };
+
+    apply(storedTheme() ?? (system.matches ? 'light' : 'dark'));
+    system.addEventListener('change', (e) => {
+        if (!storedTheme()) apply(e.matches ? 'light' : 'dark');
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((button) => {
+        button.hidden = false;
+        button.addEventListener('click', () => {
+            const next: Theme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            apply(next);
+            try {
+                localStorage.setItem('theme', next);
+            } catch (err) {
+                console.warn('Could not save the theme choice; it applies to this page only.', err);
+            }
+        });
+    });
+}
+
 export function initSite(): void {
+    initThemeToggle();
     initMobileMenu();
     initHeaderShadow();
     initCopyButtons();

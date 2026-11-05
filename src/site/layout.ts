@@ -87,14 +87,23 @@ export function renderHead(o: HeadOptions): string {
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
     <meta name="twitter:image" content="${image}" />
-    <meta name="theme-color" content="#1a0b2e" />
     ${renderHeadAssets()}
     ${(o.jsonLd ?? []).map((data) => `<script type="application/ld+json">${JSON.stringify(data)}</script>`)}`;
 }
 
-/** Icons, manifest and fonts shared by every page. */
+/**
+ * Applies a stored theme choice before first paint. Inline on purpose: an
+ * external script would let the page flash in the wrong theme.
+ */
+export const THEME_SCRIPT = `<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>`;
+
+/** Theme script, theme colour, icons, manifest and fonts shared by every page. */
 export function renderHeadAssets(): string {
-    return `<link rel="icon" href="/icons/favicon.ico" sizes="48x48" />
+    return `${THEME_SCRIPT}
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#160a26" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#faf8ff" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/icons/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/icons/sigilweaver-logo.svg" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -113,8 +122,8 @@ export function renderHeader(nav: NavName, currentPath = ''): string {
     return html`
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="site-header" data-site-header>
-      <div class="wrap flex h-16 items-center justify-between gap-6">
-        <a href="/" class="brand" aria-label="Sigilweaver home">
+      <div class="wrap flex h-16 items-center gap-2">
+        <a href="/" class="brand mr-auto" aria-label="Sigilweaver home">
           <img src="/icons/sigilweaver-logo.svg" alt="" width="28" height="28" />
           <span>Sigilweaver</span>
         </a>
@@ -122,9 +131,14 @@ export function renderHeader(nav: NavName, currentPath = ''): string {
           ${config.links.map((l) => navLink(l, currentPath, 'nav-link'))}
           ${config.cta ? `<a href="${config.cta.href}" class="btn btn-primary btn-sm ml-3">${escapeHtml(config.cta.label)}</a>` : ''}
         </nav>
+        <div class="-mr-2 flex items-center gap-1">
+        <button type="button" class="icon-button theme-toggle" data-theme-toggle hidden aria-label="Switch to light theme">
+          ${icon.sun('icon h-5 w-5 theme-icon-light')}${icon.moon('icon h-5 w-5 theme-icon-dark')}
+        </button>
         <button type="button" class="icon-button md:hidden" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
           ${icon.menu('icon h-6 w-6 menu-open-icon')}${icon.close('icon h-6 w-6 menu-close-icon')}
         </button>
+        </div>
       </div>
       <nav id="mobile-menu" class="mobile-menu md:hidden" aria-label="Main" hidden>
         <div class="wrap flex flex-col gap-1 py-3">

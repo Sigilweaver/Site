@@ -6,6 +6,11 @@ All notable changes to sigilweaver.app are recorded here.
 
 ### Added
 
+- Light theme. The site follows the system preference, and a toggle in the
+  header switches and remembers the choice. An inline script applies the
+  stored choice before first paint. Every page, including the Loom and legal
+  pages, passes an axe-core WCAG 2 AA check in both themes.
+
 - Project catalog (`src/site/projects.ts`), checked against each public
   repository and the published PyPI and crates.io versions. The homepage,
   docs hub, project pages, footer, sitemaps, `llms.txt`, Open Graph images
@@ -57,6 +62,12 @@ All notable changes to sigilweaver.app are recorded here.
   `/openyxdb/`, which crawlers ignore outside the site root.
 
 ### Fixed
+
+- The mobile menu on Loom pages never became visible: a Loom stylesheet
+  rule kept it at zero opacity.
+- On phones, Loom pages added 12px padding to every link and button,
+  including the header and footer; the rule now applies to page content only.
+- Heading order on the Loom downloads page.
 
 - Project descriptions that the repositories do not support: OpenQBW's
   "validated on 13,375 invoices, $399.9M" check (removed upstream as
